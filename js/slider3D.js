@@ -23,6 +23,17 @@ class Slider3D {
         this.dragThreshold = 50;
         
         this.init();
+        
+        // Prevenir propagación en enlaces
+        this.preventLinkPropagation();
+    }
+
+    preventLinkPropagation() {
+        document.querySelectorAll('.project-link-3d').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        });
     }
 
     init() {
@@ -135,16 +146,25 @@ class Slider3D {
         }
     }
 
-    // ===== DRAG FUNCIONALITY =====
+    // ===== DRAG FUNCIONALITY MEJORADA =====
     setupDragEvents() {
         if (!this.slider) return;
         
-        this.slider.addEventListener('mousedown', (e) => this.startDrag(e));
+        // Solo aplicar drag cuando se arrastra desde el fondo del slider, no desde enlaces
+        this.slider.addEventListener('mousedown', (e) => {
+            if (e.target.closest('a')) return;
+            this.startDrag(e);
+        });
+        
         this.slider.addEventListener('mousemove', (e) => this.drag(e));
         this.slider.addEventListener('mouseup', (e) => this.endDrag(e));
         this.slider.addEventListener('mouseleave', () => this.endDrag());
         
-        this.slider.addEventListener('touchstart', (e) => this.startDrag(e));
+        this.slider.addEventListener('touchstart', (e) => {
+            if (e.target.closest('a')) return;
+            this.startDrag(e);
+        });
+        
         this.slider.addEventListener('touchmove', (e) => this.drag(e));
         this.slider.addEventListener('touchend', (e) => this.endDrag(e));
         
@@ -252,10 +272,11 @@ class Slider3D {
         }
     }
 
-    // ===== EVENT LISTENERS =====
+    // ===== EVENT LISTENERS MEJORADOS =====
     addEventListeners() {
         if (this.prevBtn) {
-            this.prevBtn.addEventListener('click', () => {
+            this.prevBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
                 this.stopAutoPlay();
                 this.prev();
                 this.startAutoPlay();
@@ -263,7 +284,8 @@ class Slider3D {
         }
         
         if (this.nextBtn) {
-            this.nextBtn.addEventListener('click', () => {
+            this.nextBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
                 this.stopAutoPlay();
                 this.next();
                 this.startAutoPlay();
