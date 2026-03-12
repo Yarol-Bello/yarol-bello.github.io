@@ -1,5 +1,4 @@
-/* css/animations.css */
-
+/* css/animations.css - VERSIÓN CORRECTA (sin cambios) */
 @keyframes slideIn {
     from {
         transform: translateX(100%);

@@ -1,19 +1,27 @@
 // js/glitch.js
+/**
+ * Efecto Glitch para títulos
+ * Versión optimizada con mejor rendimiento
+ */
 class GlitchEffect {
     constructor(element, options = {}) {
         this.element = element;
         this.options = {
-            intensity: options.intensity || 0.3,
-            speed: options.speed || 100,
-            iterations: options.iterations || 10,
+            intensity: options.intensity || 0.2,
+            speed: options.speed || 50,
+            iterations: options.iterations || 15,
             ...options
         };
         
         this.originalText = element.innerText;
         this.glitchInterval = null;
+        this.isGlitching = false;
     }
     
     start() {
+        if (this.isGlitching) return;
+        this.isGlitching = true;
+        
         let count = 0;
         
         this.glitchInterval = setInterval(() => {
@@ -43,7 +51,11 @@ class GlitchEffect {
     }
     
     stop() {
-        clearInterval(this.glitchInterval);
+        if (this.glitchInterval) {
+            clearInterval(this.glitchInterval);
+            this.glitchInterval = null;
+        }
+        this.isGlitching = false;
     }
     
     reset() {
@@ -51,17 +63,29 @@ class GlitchEffect {
     }
 }
 
-// Aplicar efecto glitch a elementos con clase .glitch
-document.querySelectorAll('.glitch').forEach(element => {
-    const glitch = new GlitchEffect(element, {
-        intensity: 0.2,
-        speed: 50,
-        iterations: 15
-    });
+// Inicializar efecto glitch cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {
+    const glitchElements = document.querySelectorAll('.glitch');
     
-    element.addEventListener('mouseenter', () => glitch.start());
-    element.addEventListener('mouseleave', () => {
-        glitch.stop();
-        glitch.reset();
+    glitchElements.forEach(element => {
+        const glitch = new GlitchEffect(element, {
+            intensity: 0.2,
+            speed: 50,
+            iterations: 15
+        });
+        
+        let timeout;
+        
+        element.addEventListener('mouseenter', () => {
+            clearTimeout(timeout);
+            glitch.start();
+        });
+        
+        element.addEventListener('mouseleave', () => {
+            timeout = setTimeout(() => {
+                glitch.stop();
+                glitch.reset();
+            }, 100);
+        });
     });
 });

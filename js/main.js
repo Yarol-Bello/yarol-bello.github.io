@@ -1,54 +1,42 @@
-// js/main.js - VERSIÓN FINAL OPTIMIZADA
-
+// js/main.js
 document.addEventListener('DOMContentLoaded', () => {
     
-    // ===== 1. CURSOR PERSONALIZADO MEJORADO =====
+    // ===== CURSOR PERSONALIZADO =====
     const cursor = document.querySelector('.cursor');
     const cursorFollower = document.querySelector('.cursor-follower');
 
     if (cursor && cursorFollower) {
-        let mouseX = 0;
-        let mouseY = 0;
-        let cursorX = 0;
-        let cursorY = 0;
+        let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
         
         document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
-            
-            // Movimiento inmediato del cursor principal
             cursor.style.left = mouseX + 'px';
             cursor.style.top = mouseY + 'px';
         });
         
-        // Animación suave para el seguidor (requestAnimationFrame para mejor performance)
         function animateFollower() {
             cursorX += (mouseX - cursorX) * 0.1;
             cursorY += (mouseY - cursorY) * 0.1;
-            
             cursorFollower.style.left = cursorX + 'px';
             cursorFollower.style.top = cursorY + 'px';
-            
             requestAnimationFrame(animateFollower);
         }
         animateFollower();
         
-        // Efecto cuando el cursor está sobre elementos interactivos
-        const interactiveElements = document.querySelectorAll('a, button, .btn, .social-link, .project-card, .filter-btn, .nav__link');
+        const interactiveElements = document.querySelectorAll('a, button, .btn, .social-link, .filter-btn, .nav__link, .quick-nav__item');
         
         interactiveElements.forEach(el => {
             el.addEventListener('mouseenter', () => {
                 cursor.classList.add('hover');
                 cursorFollower.classList.add('hover');
             });
-            
             el.addEventListener('mouseleave', () => {
                 cursor.classList.remove('hover');
                 cursorFollower.classList.remove('hover');
             });
         });
         
-        // Ocultar cursor cuando sale de la ventana
         document.addEventListener('mouseleave', () => {
             cursor.style.opacity = '0';
             cursorFollower.style.opacity = '0';
@@ -60,9 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ===== 2. TEXTO TIPEADO =====
-    if (document.querySelector('.typed')) {
-        const typed = new Typed('.typed', {
+    // ===== TEXTO TIPEADO =====
+    if (document.querySelector('.typed') && typeof Typed !== 'undefined') {
+        new Typed('.typed', {
             strings: [
                 'Ingeniería de Sistemas',
                 'Desarrollo de Software',
@@ -73,12 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
             typeSpeed: 50,
             backSpeed: 30,
             backDelay: 2000,
-            loop: true,
-            smartBackspace: true
+            loop: true
         });
     }
 
-    // ===== 3. MENÚ MÓVIL =====
+    // ===== MENÚ MÓVIL =====
     const menuToggle = document.querySelector('.menu-toggle');
     const navList = document.querySelector('.nav__list');
     const navLinks = document.querySelectorAll('.nav__link');
@@ -99,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ===== 4. NAVEGACIÓN ACTIVA CON INTERSECTION OBSERVER (más eficiente) =====
+    // ===== NAVEGACIÓN ACTIVA =====
     const sections = document.querySelectorAll('section[id]');
     
     const observerOptions = {
@@ -122,11 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     sections.forEach(section => observer.observe(section));
 
-    // ===== 5. ANIMACIONES CON GSAP =====
+    // ===== ANIMACIONES GSAP =====
     if (typeof gsap !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger);
         
-        // Animación de entrada para el hero
         gsap.from('.hero__content', {
             duration: 1.5,
             y: 100,
@@ -142,7 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
             delay: 0.3
         });
         
-        // Animaciones al hacer scroll
         gsap.utils.toArray('.section').forEach(section => {
             gsap.from(section, {
                 scrollTrigger: {
@@ -157,7 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
         
-        // Animación para las barras de habilidades
         gsap.utils.toArray('.skill-item__progress').forEach(bar => {
             gsap.from(bar, {
                 scrollTrigger: {
@@ -172,71 +156,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ===== 6. FILTRO DE PROYECTOS =====
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-    
-    if (filterButtons.length > 0 && projectCards.length > 0) {
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Actualizar botón activo
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                
-                const filter = button.dataset.filter;
-                
-                projectCards.forEach(card => {
-                    if (filter === 'all' || card.dataset.category.includes(filter)) {
-                        if (typeof gsap !== 'undefined') {
-                            gsap.to(card, {
-                                duration: 0.5,
-                                opacity: 1,
-                                scale: 1,
-                                display: 'block',
-                                ease: 'power2.out'
-                            });
-                        } else {
-                            card.style.display = 'block';
-                            card.style.opacity = '1';
-                        }
-                    } else {
-                        if (typeof gsap !== 'undefined') {
-                            gsap.to(card, {
-                                duration: 0.5,
-                                opacity: 0,
-                                scale: 0.8,
-                                display: 'none',
-                                ease: 'power2.in'
-                            });
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    }
-                });
-            });
-        });
-    }
-
-    // ===== 7. ANIMACIÓN DEL LOGO CON DOS VERSIONES =====
-    const logo = document.querySelector('.logo');
-    const logoDark = document.querySelector('.logo__img--dark');
-    const logoLight = document.querySelector('.logo__img--light');
-    
-    if (logo) {
-        // Pequeña animación al cargar
-        setTimeout(() => {
-            logo.style.opacity = '1';
-        }, 100);
-    }
-
-    // ===== 8. FORMULARIO DE CONTACTO =====
+    // ===== FORMULARIO DE CONTACTO =====
     const contactForm = document.getElementById('contact-form');
     
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
-            // Validar formulario
             if (!validateForm(contactForm)) {
                 showNotification('Por favor, completa todos los campos correctamente', 'error');
                 return;
@@ -245,20 +171,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             
-            // Mostrar loading
             submitBtn.innerHTML = '<span>ENVIANDO...</span> <div class="loader"></div>';
             submitBtn.disabled = true;
             
             try {
-                // Simulación de envío (reemplazar con tu servicio real)
                 await new Promise(resolve => setTimeout(resolve, 2000));
-                
                 showNotification('¡Mensaje enviado con éxito! Te contactaré pronto.', 'success');
                 contactForm.reset();
-                
             } catch (error) {
                 showNotification('Error al enviar el mensaje. Intenta de nuevo.', 'error');
-                console.error('Error:', error);
             } finally {
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
@@ -267,8 +188,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ===== FUNCIONES AUXILIARES =====
-    
-    // Validación de formulario
     function validateForm(form) {
         const inputs = form.querySelectorAll('input[required], textarea[required]');
         let isValid = true;
@@ -277,36 +196,26 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!input.value.trim()) {
                 input.style.borderColor = '#ff3366';
                 isValid = false;
-                
-                // Agregar efecto de shake
                 input.classList.add('shake');
-                setTimeout(() => {
-                    input.classList.remove('shake');
-                }, 500);
+                setTimeout(() => input.classList.remove('shake'), 500);
             } else {
                 input.style.borderColor = '';
             }
             
-            // Validar email
             if (input.type === 'email' && input.value) {
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (!emailRegex.test(input.value)) {
                     input.style.borderColor = '#ff3366';
                     input.classList.add('shake');
-                    setTimeout(() => {
-                        input.classList.remove('shake');
-                    }, 500);
+                    setTimeout(() => input.classList.remove('shake'), 500);
                     isValid = false;
                 }
             }
         });
-        
         return isValid;
     }
     
-    // Mostrar notificaciones
     function showNotification(message, type = 'success') {
-        // Eliminar notificaciones anteriores
         const oldNotification = document.querySelector('.notification');
         if (oldNotification) oldNotification.remove();
         
@@ -316,101 +225,74 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="notification__icon">${type === 'success' ? '✓' : '✗'}</div>
             <div class="notification__message">${message}</div>
         `;
-        
         document.body.appendChild(notification);
         
         setTimeout(() => {
             notification.style.animation = 'slideOut 0.3s ease forwards';
-            setTimeout(() => {
-                notification.remove();
-            }, 300);
+            setTimeout(() => notification.remove(), 300);
         }, 3000);
+    }
+
+    // ===== QUICK NAV ACTIVO =====
+    const quickNavItems = document.querySelectorAll('.quick-nav__item');
+    
+    if (quickNavItems.length > 0) {
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const scrollPosition = window.scrollY + 100;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            quickNavItems.forEach(item => {
+                item.classList.remove('active');
+                const href = item.getAttribute('href').replace('#', '');
+                if (href === current) {
+                    item.classList.add('active');
+                }
+            });
+        });
     }
 });
 
-// ===== 9. CAMBIO DE TEMA CON ANIMACIÓN DE LOGO MEJORADA =====
+// ===== CAMBIO DE TEMA =====
 const themeToggle = document.getElementById('theme-toggle');
 const htmlElement = document.documentElement;
 
-// Verificar si hay un tema guardado en localStorage
 const savedTheme = localStorage.getItem('theme') || 'dark';
 htmlElement.setAttribute('data-theme', savedTheme);
+document.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme: savedTheme } }));
 
-// Función para cambiar el tema con animación mejorada
 function toggleTheme() {
     const currentTheme = htmlElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     
-    // Animación del logo
     const logo = document.querySelector('.logo');
     if (logo) {
         logo.style.transform = 'scale(0.9) rotate(-2deg)';
         logo.style.transition = 'transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
-        
-        setTimeout(() => {
-            logo.style.transform = 'scale(1) rotate(0)';
-        }, 200);
-        
-        setTimeout(() => {
-            logo.style.transition = '';
-        }, 500);
+        setTimeout(() => { logo.style.transform = 'scale(1) rotate(0)'; }, 200);
+        setTimeout(() => { logo.style.transition = ''; }, 500);
     }
     
-    // Cambiar el tema
     htmlElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
+    document.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme: newTheme } }));
     
-    // Animación del body
     document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
-    setTimeout(() => {
-        document.body.style.transition = '';
-    }, 300);
+    setTimeout(() => { document.body.style.transition = ''; }, 300);
 }
 
-// Event listener para el botón de tema
 if (themeToggle) {
     themeToggle.addEventListener('click', toggleTheme);
 }
 
-// ===== 10. DETECTAR PREFERENCIA DEL SISTEMA (OPCIONAL) =====
-// Si no hay tema guardado, usar la preferencia del sistema
 if (!localStorage.getItem('theme')) {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     htmlElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
-}
-
-// Escuchar cambios en la preferencia del sistema
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-    // Solo aplicar si el usuario no ha establecido una preferencia manual
-    if (!localStorage.getItem('theme')) {
-        htmlElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
-    }
-});
-
-// ===== 11. PREVENIR PARPADEO INICIAL =====
-// Ocultar el body hasta que el tema esté listo (evita flash de color incorrecto)
-document.body.style.visibility = 'visible';
-
-// ===== QUICK NAV ACTIVO (OPCIONAL) =====
-const quickNavItems = document.querySelectorAll('.quick-nav__item');
-
-if (quickNavItems.length > 0) {
-    window.addEventListener('scroll', () => {
-        let current = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (scrollY >= sectionTop - 200) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        quickNavItems.forEach(item => {
-            item.classList.remove('active');
-            if (item.getAttribute('href') === `#${current}`) {
-                item.classList.add('active');
-            }
-        });
-    });
 }
