@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>YAROL BELLO | Ingeniería de Sistemas</title>
+    <title>YAROL BELLO | Mi portafolio</title>
 
     <!-- Meta tags mejorados -->
     <meta name="description"
@@ -207,366 +207,427 @@
             </div>
         </section>
 
-        <!-- PROYECTOS CON SLIDER 3D -->
-        <section id="proyectos" class="projects section">
-            <div class="container">
-                <h2 class="section__title"><span class="section__title-prefix">//</span>PROYECTOS DESTACADOS</h2>
+        <!-- PROYECTOS CON SLIDER 3D - VERSIÓN FINAL (HOVER EN DESKTOP, CLIC EN MÓVIL) -->
+<section id="proyectos" class="projects section">
+    <div class="container">
+        <h2 class="section__title"><span class="section__title-prefix">//</span>PROYECTOS DESTACADOS</h2>
 
-                <!-- FILTROS -->
-                <div class="projects__filters" id="projectFilters">
-                    <button class="filter-btn active" data-filter="all">TODOS</button>
-                    <button class="filter-btn" data-filter="software">SOFTWARE</button>
-                    <button class="filter-btn" data-filter="database">BD</button>
-                    <button class="filter-btn" data-filter="web">WEB</button>
-                </div>
+        <!-- FILTROS -->
+        <div class="projects__filters" id="projectFilters">
+            <button class="filter-btn active" data-filter="all">TODOS</button>
+            <button class="filter-btn" data-filter="software">SOFTWARE</button>
+            <button class="filter-btn" data-filter="database">BD</button>
+            <button class="filter-btn" data-filter="web">WEB</button>
+        </div>
 
-                <!-- SLIDER 3D -->
-                <div class="slider-3d-container">
-                    <div class="slider-3d" id="slider3d">
-                        <!-- PROYECTO 1: Sistema de Ventas -->
-                        <div class="slider-3d__item" data-category="software database">
-                            <div class="project-card-3d">
-                                <div class="project-card-3d__inner">
-                                    <div class="project-card-3d__front">
-                                        <img src="assets/images/sistemaventas.svg" alt="Sistema de Ventas" class="project-card-3d__front-img">
-                                        <div class="project-card-3d__overlay">
-                                            <h3>Sistema de Ventas</h3>
-                                            <p><i class="fas fa-location-dot"></i> <strong>Cevichería Local</strong> · Huancayo</p>
-                                        </div>
-                                    </div>
-                                    <div class="project-card-3d__back">
-                                        <h3 class="project-card-3d__title">Sistema de Ventas</h3>
-                                        <p class="project-card-3d__description">Desarrollo de sistema de registro de ventas para cevichería local. Incluye gestión de productos, clientes y reportes diarios.</p>
-                                        <div class="project-card-3d__tech">
-                                            <span class="tech-tag">Java</span>
-                                            <span class="tech-tag">MySQL</span>
-                                            <span class="tech-tag">JDBC</span>
-                                            <span class="tech-tag">Swing</span>
-                                        </div>
-                                        <div class="project-card-3d__features">
-                                            <h4>Características:</h4>
-                                            <ul><li>✓ Registro de ventas</li><li>✓ Control de inventario</li><li>✓ Reportes diarios</li><li>✓ Gestión de clientes</li></ul>
-                                        </div>
-                                        <div class="project-card-3d__links">
-                                            <a href="https://github.com/tuusuario/sistema-ventas" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
-                                            <a href="demo.html?project=ventas&github=https://github.com/tuusuario/sistema-ventas" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                        </div>
-                                    </div>
+        <!-- SLIDER 3D -->
+        <div class="slider-3d-container">
+            <div class="slider-3d" id="slider3d">
+
+                <!-- PROYECTO 1: Sistema de Ventas -->
+                <div class="slider-3d__item" data-category="software database">
+                    <div class="project-card-3d">
+                        <div class="project-card-3d__inner">
+                            <div class="project-card-3d__front">
+                                <img src="assets/images/sistemaventas.svg" alt="Sistema de Ventas" class="project-card-3d__front-img">
+                                <div class="project-card-3d__overlay">
+                                    <h3>Sistema de Ventas</h3>
+                                    <p><i class="fas fa-location-dot"></i> <strong>Cevichería Local</strong> · Huancayo</p>
+                                    <span class="tap-hint">👆 Toca para ver detalles</span>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- PROYECTO 2: Sistema de Inventario -->
-                        <div class="slider-3d__item" data-category="software database">
-                            <div class="project-card-3d">
-                                <div class="project-card-3d__inner">
-                                    <div class="project-card-3d__front">
-                                        <img src="assets/images/sistemainventario.svg" alt="Sistema de Inventario" class="project-card-3d__front-img">
-                                        <div class="project-card-3d__overlay">
-                                            <h3>Sistema de Inventario</h3>
-                                            <p><i class="fas fa-warehouse"></i> <strong>Control de stock</strong> · Tiempo real</p>
-                                        </div>
-                                    </div>
-                                    <div class="project-card-3d__back">
-                                        <h3 class="project-card-3d__title">Sistema de Inventario</h3>
-                                        <p class="project-card-3d__description">Aplicación para gestión de inventario con alertas de stock mínimo y generación de códigos de barras.</p>
-                                        <div class="project-card-3d__tech">
-                                            <span class="tech-tag">Python</span>
-                                            <span class="tech-tag">SQLite</span>
-                                            <span class="tech-tag">Tkinter</span>
-                                            <span class="tech-tag">ReportLab</span>
-                                        </div>
-                                        <div class="project-card-3d__features">
-                                            <h4>Características:</h4>
-                                            <ul><li>✓ Control de stock</li><li>✓ Alertas automáticas</li><li>✓ Generación de reportes</li><li>✓ Códigos de barras</li></ul>
-                                        </div>
-                                        <div class="project-card-3d__links">
-                                            <a href="https://github.com/tuusuario/sistema-inventario" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
-                                            <a href="demo.html?project=inventario&github=https://github.com/tuusuario/sistema-inventario" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                        </div>
-                                    </div>
+                            <div class="project-card-3d__back">
+                                <h3 class="project-card-3d__title">Sistema de Ventas</h3>
+                                <p class="project-card-3d__description">Desarrollo de sistema de registro de ventas para cevichería local. Incluye gestión de productos, clientes y reportes diarios.</p>
+                                <div class="project-card-3d__tech">
+                                    <span class="tech-tag">Java</span>
+                                    <span class="tech-tag">MySQL</span>
+                                    <span class="tech-tag">JDBC</span>
+                                    <span class="tech-tag">Swing</span>
                                 </div>
-                            </div>
-                        </div>
-
-                        <!-- PROYECTO 3: Portafolio Web -->
-                        <div class="slider-3d__item" data-category="web">
-                            <div class="project-card-3d">
-                                <div class="project-card-3d__inner">
-                                    <div class="project-card-3d__front">
-                                        <img src="assets/images/portafolioweb.svg" alt="Portafolio Web" class="project-card-3d__front-img">
-                                        <div class="project-card-3d__overlay">
-                                            <h3>Portafolio Web</h3>
-                                            <p><i class="fas fa-laptop-code"></i> <strong>Diseño responsivo</strong> · 2026</p>
-                                        </div>
-                                    </div>
-                                    <div class="project-card-3d__back">
-                                        <h3 class="project-card-3d__title">Portafolio Web Profesional</h3>
-                                        <p class="project-card-3d__description">Desarrollo de portafolio personal con diseño moderno, animaciones y efectos visuales avanzados.</p>
-                                        <div class="project-card-3d__tech">
-                                            <span class="tech-tag">HTML5</span>
-                                            <span class="tech-tag">CSS3</span>
-                                            <span class="tech-tag">JavaScript</span>
-                                            <span class="tech-tag">GSAP</span>
-                                        </div>
-                                        <div class="project-card-3d__features">
-                                            <h4>Características:</h4>
-                                            <ul><li>✓ Diseño responsivo</li><li>✓ Animaciones fluidas</li><li>✓ Modo oscuro/claro</li><li>✓ Optimizado SEO</li></ul>
-                                        </div>
-                                        <div class="project-card-3d__links">
-                                            <a href="https://github.com/tuusuario/portafolio" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
-                                            <a href="demo.html?project=web&github=https://github.com/tuusuario/portafolio" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                        </div>
-                                    </div>
+                                <div class="project-card-3d__features">
+                                    <h4>Características:</h4>
+                                    <ul>
+                                        <li>✓ Registro de ventas</li>
+                                        <li>✓ Control de inventario</li>
+                                        <li>✓ Reportes diarios</li>
+                                        <li>✓ Gestión de clientes</li>
+                                    </ul>
                                 </div>
-                            </div>
-                        </div>
-
-                        <!-- PROYECTO 4: BD Biblioteca -->
-                        <div class="slider-3d__item" data-category="database">
-                            <div class="project-card-3d">
-                                <div class="project-card-3d__inner">
-                                    <div class="project-card-3d__front">
-                                        <img src="assets/images/bdbiblioteca.svg" alt="BD Biblioteca" class="project-card-3d__front-img">
-                                        <div class="project-card-3d__overlay">
-                                            <h3>BD Biblioteca</h3>
-                                            <p><i class="fas fa-database"></i> <strong>Modelo relacional</strong> · 3FN</p>
-                                        </div>
-                                    </div>
-                                    <div class="project-card-3d__back">
-                                        <h3 class="project-card-3d__title">Base de Datos Biblioteca</h3>
-                                        <p class="project-card-3d__description">Diseño completo de base de datos para sistema de biblioteca con procedimientos almacenados y triggers.</p>
-                                        <div class="project-card-3d__tech">
-                                            <span class="tech-tag">MySQL</span>
-                                            <span class="tech-tag">Workbench</span>
-                                            <span class="tech-tag">Stored Procedures</span>
-                                            <span class="tech-tag">Triggers</span>
-                                        </div>
-                                        <div class="project-card-3d__features">
-                                            <h4>Características:</h4>
-                                            <ul><li>✓ Modelo E-R completo</li><li>✓ Normalización 3FN</li><li>✓ Consultas complejas</li><li>✓ Backup automático</li></ul>
-                                        </div>
-                                        <div class="project-card-3d__links">
-                                            <a href="https://github.com/tuusuario/bd-biblioteca" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
-                                            <a href="demo.html?project=bd&github=https://github.com/tuusuario/bd-biblioteca" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- PROYECTO 5: Aplicación de Clima -->
-                        <div class="slider-3d__item" data-category="web">
-                            <div class="project-card-3d">
-                                <div class="project-card-3d__inner">
-                                    <div class="project-card-3d__front">
-                                        <img src="assets/images/appclima.svg" alt="App del Clima" class="project-card-3d__front-img">
-                                        <div class="project-card-3d__overlay">
-                                            <h3>App del Clima</h3>
-                                            <p><i class="fas fa-cloud-sun"></i> <strong>API OpenWeatherMap</strong> · React</p>
-                                        </div>
-                                    </div>
-                                    <div class="project-card-3d__back">
-                                        <h3 class="project-card-3d__title">App del Clima</h3>
-                                        <p class="project-card-3d__description">Aplicación web que muestra el clima actual y pronóstico usando la API de OpenWeatherMap.</p>
-                                        <div class="project-card-3d__tech">
-                                            <span class="tech-tag">React</span>
-                                            <span class="tech-tag">API REST</span>
-                                            <span class="tech-tag">CSS3</span>
-                                            <span class="tech-tag">Axios</span>
-                                        </div>
-                                        <div class="project-card-3d__features">
-                                            <h4>Características:</h4>
-                                            <ul><li>✓ Búsqueda por ciudad</li><li>✓ Geolocalización</li><li>✓ Pronóstico 5 días</li><li>✓ Modo oscuro/claro</li></ul>
-                                        </div>
-                                        <div class="project-card-3d__links">
-                                            <a href="https://github.com/tuusuario/app-clima" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
-                                            <a href="demo.html?project=clima&github=https://github.com/tuusuario/app-clima" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- PROYECTO 6: API REST -->
-                        <div class="slider-3d__item" data-category="software">
-                            <div class="project-card-3d">
-                                <div class="project-card-3d__inner">
-                                    <div class="project-card-3d__front">
-                                        <img src="assets/images/apirest.svg" alt="API REST" class="project-card-3d__front-img">
-                                        <div class="project-card-3d__overlay">
-                                            <h3>API REST</h3>
-                                            <p><i class="fas fa-code-branch"></i> <strong>Node.js + Express</strong> · JWT</p>
-                                        </div>
-                                    </div>
-                                    <div class="project-card-3d__back">
-                                        <h3 class="project-card-3d__title">API REST con Node.js</h3>
-                                        <p class="project-card-3d__description">Desarrollo de API RESTful para gestión de usuarios y productos con autenticación JWT.</p>
-                                        <div class="project-card-3d__tech">
-                                            <span class="tech-tag">Node.js</span>
-                                            <span class="tech-tag">Express</span>
-                                            <span class="tech-tag">MongoDB</span>
-                                            <span class="tech-tag">JWT</span>
-                                        </div>
-                                        <div class="project-card-3d__features">
-                                            <h4>Características:</h4>
-                                            <ul><li>✓ CRUD completo</li><li>✓ Autenticación JWT</li><li>✓ Middlewares</li><li>✓ Documentación Swagger</li></ul>
-                                        </div>
-                                        <div class="project-card-3d__links">
-                                            <a href="https://github.com/tuusuario/api-rest" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
-                                            <a href="demo.html?project=api&github=https://github.com/tuusuario/api-rest" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- PROYECTO 7: MySQL Avanzada -->
-                        <div class="slider-3d__item" data-category="database">
-                            <div class="project-card-3d">
-                                <div class="project-card-3d__inner">
-                                    <div class="project-card-3d__front">
-                                        <img src="assets/images/mysqlavanzada.svg" alt="MySQL Avanzada" class="project-card-3d__front-img">
-                                        <div class="project-card-3d__overlay">
-                                            <h3>BD MySQL Avanzada</h3>
-                                            <p><i class="fas fa-chart-line"></i> <strong>Optimización</strong> · 50k+ registros</p>
-                                        </div>
-                                    </div>
-                                    <div class="project-card-3d__back">
-                                        <h3 class="project-card-3d__title">Base de Datos MySQL Avanzada</h3>
-                                        <p class="project-card-3d__description">Diseño e implementación de base de datos optimizada para sistema de ventas con 50,000+ registros.</p>
-                                        <div class="project-card-3d__tech">
-                                            <span class="tech-tag">MySQL</span>
-                                            <span class="tech-tag">Índices</span>
-                                            <span class="tech-tag">Stored Procedures</span>
-                                            <span class="tech-tag">Triggers</span>
-                                        </div>
-                                        <div class="project-card-3d__features">
-                                            <h4>Características:</h4>
-                                            <ul><li>✓ Optimización de queries</li><li>✓ Índices compuestos</li><li>✓ Vistas materializadas</li><li>✓ Backup automático</li></ul>
-                                        </div>
-                                        <div class="project-card-3d__links">
-                                            <a href="https://github.com/tuusuario/mysql-avanzado" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
-                                            <a href="demo.html?project=mysql&github=https://github.com/tuusuario/mysql-avanzado" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- PROYECTO 8: Dashboard Admin -->
-                        <div class="slider-3d__item" data-category="web">
-                            <div class="project-card-3d">
-                                <div class="project-card-3d__inner">
-                                    <div class="project-card-3d__front">
-                                        <img src="assets/images/dashboard.svg" alt="Dashboard Admin" class="project-card-3d__front-img">
-                                        <div class="project-card-3d__overlay">
-                                            <h3>Dashboard Admin</h3>
-                                            <p><i class="fas fa-chart-pie"></i> <strong>Analítica</strong> · Tiempo real</p>
-                                        </div>
-                                    </div>
-                                    <div class="project-card-3d__back">
-                                        <h3 class="project-card-3d__title">Dashboard Administrativo</h3>
-                                        <p class="project-card-3d__description">Panel de control con gráficos interactivos y datos en tiempo real para análisis de ventas.</p>
-                                        <div class="project-card-3d__tech">
-                                            <span class="tech-tag">Vue.js</span>
-                                            <span class="tech-tag">Chart.js</span>
-                                            <span class="tech-tag">Firebase</span>
-                                            <span class="tech-tag">Tailwind</span>
-                                        </div>
-                                        <div class="project-card-3d__features">
-                                            <h4>Características:</h4>
-                                            <ul><li>✓ Gráficos interactivos</li><li>✓ Datos en tiempo real</li><li>✓ Filtros dinámicos</li><li>✓ Exportar reportes</li></ul>
-                                        </div>
-                                        <div class="project-card-3d__links">
-                                            <a href="https://github.com/tuusuario/dashboard" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
-                                            <a href="demo.html?project=dashboard&github=https://github.com/tuusuario/dashboard" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- PROYECTO 9: App de Tareas -->
-                        <div class="slider-3d__item" data-category="software">
-                            <div class="project-card-3d">
-                                <div class="project-card-3d__inner">
-                                    <div class="project-card-3d__front">
-                                        <img src="assets/images/apptareas.svg" alt="App Tareas" class="project-card-3d__front-img">
-                                        <div class="project-card-3d__overlay">
-                                            <h3>App de Tareas</h3>
-                                            <p><i class="fas fa-tasks"></i> <strong>Java + SQLite</strong> · Recordatorios</p>
-                                        </div>
-                                    </div>
-                                    <div class="project-card-3d__back">
-                                        <h3 class="project-card-3d__title">Aplicación de Tareas</h3>
-                                        <p class="project-card-3d__description">Aplicación de escritorio para gestión de tareas con recordatorios y categorías.</p>
-                                        <div class="project-card-3d__tech">
-                                            <span class="tech-tag">Java</span>
-                                            <span class="tech-tag">SQLite</span>
-                                            <span class="tech-tag">JavaFX</span>
-                                            <span class="tech-tag">Hibernate</span>
-                                        </div>
-                                        <div class="project-card-3d__features">
-                                            <h4>Características:</h4>
-                                            <ul><li>✓ CRUD de tareas</li><li>✓ Categorías personalizadas</li><li>✓ Recordatorios</li><li>✓ Búsqueda avanzada</li></ul>
-                                        </div>
-                                        <div class="project-card-3d__links">
-                                            <a href="https://github.com/tuusuario/app-tareas" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
-                                            <a href="demo.html?project=tareas&github=https://github.com/tuusuario/app-tareas" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- PROYECTO 10: Data Warehouse -->
-                        <div class="slider-3d__item" data-category="database">
-                            <div class="project-card-3d">
-                                <div class="project-card-3d__inner">
-                                    <div class="project-card-3d__front">
-                                        <img src="assets/images/datawarehouse.svg" alt="Data Warehouse" class="project-card-3d__front-img">
-                                        <div class="project-card-3d__overlay">
-                                            <h3>Data Warehouse</h3>
-                                            <p><i class="fas fa-cubes"></i> <strong>ETL + BI</strong> · Power BI</p>
-                                        </div>
-                                    </div>
-                                    <div class="project-card-3d__back">
-                                        <h3 class="project-card-3d__title">Data Warehouse</h3>
-                                        <p class="project-card-3d__description">Diseño e implementación de Data Warehouse para análisis de ventas con procesos ETL.</p>
-                                        <div class="project-card-3d__tech">
-                                            <span class="tech-tag">PostgreSQL</span>
-                                            <span class="tech-tag">Pentaho</span>
-                                            <span class="tech-tag">Power BI</span>
-                                            <span class="tech-tag">SQL</span>
-                                        </div>
-                                        <div class="project-card-3d__features">
-                                            <h4>Características:</h4>
-                                            <ul><li>✓ Modelo estrella</li><li>✓ Procesos ETL</li><li>✓ Cubos OLAP</li><li>✓ Dashboard Power BI</li></ul>
-                                        </div>
-                                        <div class="project-card-3d__links">
-                                            <a href="https://github.com/tuusuario/data-warehouse" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
-                                            <a href="demo.html?project=warehouse&github=https://github.com/tuusuario/data-warehouse" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                        </div>
-                                    </div>
+                                <div class="project-card-3d__links">
+                                    <a href="https://github.com/tuusuario/sistema-ventas" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
+                                    <a href="demo.html?project=ventas&github=https://github.com/tuusuario/sistema-ventas" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Controles del slider -->
-                    <button class="slider-3d__control slider-3d__control--prev" id="sliderPrev">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="slider-3d__control slider-3d__control--next" id="sliderNext">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
                 </div>
 
-                <!-- Indicadores de posición -->
-                <div class="slider-3d__dots" id="sliderDots"></div>
+                <!-- PROYECTO 2: Sistema de Inventario -->
+                <div class="slider-3d__item" data-category="software database">
+                    <div class="project-card-3d">
+                        <div class="project-card-3d__inner">
+                            <div class="project-card-3d__front">
+                                <img src="assets/images/sistemainventario.svg" alt="Sistema de Inventario" class="project-card-3d__front-img">
+                                <div class="project-card-3d__overlay">
+                                    <h3>Sistema de Inventario</h3>
+                                    <p><i class="fas fa-warehouse"></i> <strong>Control de stock</strong> · Tiempo real</p>
+                                    <span class="tap-hint">👆 Toca para ver detalles</span>
+                                </div>
+                            </div>
+                            <div class="project-card-3d__back">
+                                <h3 class="project-card-3d__title">Sistema de Inventario</h3>
+                                <p class="project-card-3d__description">Aplicación para gestión de inventario con alertas de stock mínimo y generación de códigos de barras.</p>
+                                <div class="project-card-3d__tech">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">SQLite</span>
+                                    <span class="tech-tag">Tkinter</span>
+                                    <span class="tech-tag">ReportLab</span>
+                                </div>
+                                <div class="project-card-3d__features">
+                                    <h4>Características:</h4>
+                                    <ul>
+                                        <li>✓ Control de stock</li>
+                                        <li>✓ Alertas automáticas</li>
+                                        <li>✓ Generación de reportes</li>
+                                        <li>✓ Códigos de barras</li>
+                                    </ul>
+                                </div>
+                                <div class="project-card-3d__links">
+                                    <a href="https://github.com/tuusuario/sistema-inventario" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
+                                    <a href="demo.html?project=inventario&github=https://github.com/tuusuario/sistema-inventario" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROYECTO 3: Portafolio Web -->
+                <div class="slider-3d__item" data-category="web">
+                    <div class="project-card-3d">
+                        <div class="project-card-3d__inner">
+                            <div class="project-card-3d__front">
+                                <img src="assets/images/portafolioweb.svg" alt="Portafolio Web" class="project-card-3d__front-img">
+                                <div class="project-card-3d__overlay">
+                                    <h3>Portafolio Web</h3>
+                                    <p><i class="fas fa-laptop-code"></i> <strong>Diseño responsivo</strong> · 2026</p>
+                                    <span class="tap-hint">👆 Toca para ver detalles</span>
+                                </div>
+                            </div>
+                            <div class="project-card-3d__back">
+                                <h3 class="project-card-3d__title">Portafolio Web Profesional</h3>
+                                <p class="project-card-3d__description">Desarrollo de portafolio personal con diseño moderno, animaciones y efectos visuales avanzados.</p>
+                                <div class="project-card-3d__tech">
+                                    <span class="tech-tag">HTML5</span>
+                                    <span class="tech-tag">CSS3</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">GSAP</span>
+                                </div>
+                                <div class="project-card-3d__features">
+                                    <h4>Características:</h4>
+                                    <ul>
+                                        <li>✓ Diseño responsivo</li>
+                                        <li>✓ Animaciones fluidas</li>
+                                        <li>✓ Modo oscuro/claro</li>
+                                        <li>✓ Optimizado SEO</li>
+                                    </ul>
+                                </div>
+                                <div class="project-card-3d__links">
+                                    <a href="https://github.com/tuusuario/portafolio" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
+                                    <a href="demo.html?project=web&github=https://github.com/tuusuario/portafolio" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROYECTO 4: BD Biblioteca -->
+                <div class="slider-3d__item" data-category="database">
+                    <div class="project-card-3d">
+                        <div class="project-card-3d__inner">
+                            <div class="project-card-3d__front">
+                                <img src="assets/images/bdbiblioteca.svg" alt="BD Biblioteca" class="project-card-3d__front-img">
+                                <div class="project-card-3d__overlay">
+                                    <h3>BD Biblioteca</h3>
+                                    <p><i class="fas fa-database"></i> <strong>Modelo relacional</strong> · 3FN</p>
+                                    <span class="tap-hint">👆 Toca para ver detalles</span>
+                                </div>
+                            </div>
+                            <div class="project-card-3d__back">
+                                <h3 class="project-card-3d__title">Base de Datos Biblioteca</h3>
+                                <p class="project-card-3d__description">Diseño completo de base de datos para sistema de biblioteca con procedimientos almacenados y triggers.</p>
+                                <div class="project-card-3d__tech">
+                                    <span class="tech-tag">MySQL</span>
+                                    <span class="tech-tag">Workbench</span>
+                                    <span class="tech-tag">Stored Procedures</span>
+                                    <span class="tech-tag">Triggers</span>
+                                </div>
+                                <div class="project-card-3d__features">
+                                    <h4>Características:</h4>
+                                    <ul>
+                                        <li>✓ Modelo E-R completo</li>
+                                        <li>✓ Normalización 3FN</li>
+                                        <li>✓ Consultas complejas</li>
+                                        <li>✓ Backup automático</li>
+                                    </ul>
+                                </div>
+                                <div class="project-card-3d__links">
+                                    <a href="https://github.com/tuusuario/bd-biblioteca" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
+                                    <a href="demo.html?project=bd&github=https://github.com/tuusuario/bd-biblioteca" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROYECTO 5: Aplicación de Clima -->
+                <div class="slider-3d__item" data-category="web">
+                    <div class="project-card-3d">
+                        <div class="project-card-3d__inner">
+                            <div class="project-card-3d__front">
+                                <img src="assets/images/appclima.svg" alt="App del Clima" class="project-card-3d__front-img">
+                                <div class="project-card-3d__overlay">
+                                    <h3>App del Clima</h3>
+                                    <p><i class="fas fa-cloud-sun"></i> <strong>API OpenWeatherMap</strong> · React</p>
+                                    <span class="tap-hint">👆 Toca para ver detalles</span>
+                                </div>
+                            </div>
+                            <div class="project-card-3d__back">
+                                <h3 class="project-card-3d__title">App del Clima</h3>
+                                <p class="project-card-3d__description">Aplicación web que muestra el clima actual y pronóstico usando la API de OpenWeatherMap.</p>
+                                <div class="project-card-3d__tech">
+                                    <span class="tech-tag">React</span>
+                                    <span class="tech-tag">API REST</span>
+                                    <span class="tech-tag">CSS3</span>
+                                    <span class="tech-tag">Axios</span>
+                                </div>
+                                <div class="project-card-3d__features">
+                                    <h4>Características:</h4>
+                                    <ul>
+                                        <li>✓ Búsqueda por ciudad</li>
+                                        <li>✓ Geolocalización</li>
+                                        <li>✓ Pronóstico 5 días</li>
+                                        <li>✓ Modo oscuro/claro</li>
+                                    </ul>
+                                </div>
+                                <div class="project-card-3d__links">
+                                    <a href="https://github.com/tuusuario/app-clima" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
+                                    <a href="demo.html?project=clima&github=https://github.com/tuusuario/app-clima" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROYECTO 6: API REST -->
+                <div class="slider-3d__item" data-category="software">
+                    <div class="project-card-3d">
+                        <div class="project-card-3d__inner">
+                            <div class="project-card-3d__front">
+                                <img src="assets/images/apirest.svg" alt="API REST" class="project-card-3d__front-img">
+                                <div class="project-card-3d__overlay">
+                                    <h3>API REST</h3>
+                                    <p><i class="fas fa-code-branch"></i> <strong>Node.js + Express</strong> · JWT</p>
+                                    <span class="tap-hint">👆 Toca para ver detalles</span>
+                                </div>
+                            </div>
+                            <div class="project-card-3d__back">
+                                <h3 class="project-card-3d__title">API REST con Node.js</h3>
+                                <p class="project-card-3d__description">Desarrollo de API RESTful para gestión de usuarios y productos con autenticación JWT.</p>
+                                <div class="project-card-3d__tech">
+                                    <span class="tech-tag">Node.js</span>
+                                    <span class="tech-tag">Express</span>
+                                    <span class="tech-tag">MongoDB</span>
+                                    <span class="tech-tag">JWT</span>
+                                </div>
+                                <div class="project-card-3d__features">
+                                    <h4>Características:</h4>
+                                    <ul>
+                                        <li>✓ CRUD completo</li>
+                                        <li>✓ Autenticación JWT</li>
+                                        <li>✓ Middlewares</li>
+                                        <li>✓ Documentación Swagger</li>
+                                    </ul>
+                                </div>
+                                <div class="project-card-3d__links">
+                                    <a href="https://github.com/tuusuario/api-rest" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
+                                    <a href="demo.html?project=api&github=https://github.com/tuusuario/api-rest" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROYECTO 7: MySQL Avanzada -->
+                <div class="slider-3d__item" data-category="database">
+                    <div class="project-card-3d">
+                        <div class="project-card-3d__inner">
+                            <div class="project-card-3d__front">
+                                <img src="assets/images/mysqlavanzada.svg" alt="MySQL Avanzada" class="project-card-3d__front-img">
+                                <div class="project-card-3d__overlay">
+                                    <h3>BD MySQL Avanzada</h3>
+                                    <p><i class="fas fa-chart-line"></i> <strong>Optimización</strong> · 50k+ registros</p>
+                                    <span class="tap-hint">👆 Toca para ver detalles</span>
+                                </div>
+                            </div>
+                            <div class="project-card-3d__back">
+                                <h3 class="project-card-3d__title">Base de Datos MySQL Avanzada</h3>
+                                <p class="project-card-3d__description">Diseño e implementación de base de datos optimizada para sistema de ventas con 50,000+ registros.</p>
+                                <div class="project-card-3d__tech">
+                                    <span class="tech-tag">MySQL</span>
+                                    <span class="tech-tag">Índices</span>
+                                    <span class="tech-tag">Stored Procedures</span>
+                                    <span class="tech-tag">Triggers</span>
+                                </div>
+                                <div class="project-card-3d__features">
+                                    <h4>Características:</h4>
+                                    <ul>
+                                        <li>✓ Optimización de queries</li>
+                                        <li>✓ Índices compuestos</li>
+                                        <li>✓ Vistas materializadas</li>
+                                        <li>✓ Backup automático</li>
+                                    </ul>
+                                </div>
+                                <div class="project-card-3d__links">
+                                    <a href="https://github.com/tuusuario/mysql-avanzado" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
+                                    <a href="demo.html?project=mysql&github=https://github.com/tuusuario/mysql-avanzado" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROYECTO 8: Dashboard Admin -->
+                <div class="slider-3d__item" data-category="web">
+                    <div class="project-card-3d">
+                        <div class="project-card-3d__inner">
+                            <div class="project-card-3d__front">
+                                <img src="assets/images/dashboard.svg" alt="Dashboard Admin" class="project-card-3d__front-img">
+                                <div class="project-card-3d__overlay">
+                                    <h3>Dashboard Admin</h3>
+                                    <p><i class="fas fa-chart-pie"></i> <strong>Analítica</strong> · Tiempo real</p>
+                                    <span class="tap-hint">👆 Toca para ver detalles</span>
+                                </div>
+                            </div>
+                            <div class="project-card-3d__back">
+                                <h3 class="project-card-3d__title">Dashboard Administrativo</h3>
+                                <p class="project-card-3d__description">Panel de control con gráficos interactivos y datos en tiempo real para análisis de ventas.</p>
+                                <div class="project-card-3d__tech">
+                                    <span class="tech-tag">Vue.js</span>
+                                    <span class="tech-tag">Chart.js</span>
+                                    <span class="tech-tag">Firebase</span>
+                                    <span class="tech-tag">Tailwind</span>
+                                </div>
+                                <div class="project-card-3d__features">
+                                    <h4>Características:</h4>
+                                    <ul>
+                                        <li>✓ Gráficos interactivos</li>
+                                        <li>✓ Datos en tiempo real</li>
+                                        <li>✓ Filtros dinámicos</li>
+                                        <li>✓ Exportar reportes</li>
+                                    </ul>
+                                </div>
+                                <div class="project-card-3d__links">
+                                    <a href="https://github.com/tuusuario/dashboard" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
+                                    <a href="demo.html?project=dashboard&github=https://github.com/tuusuario/dashboard" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROYECTO 9: App de Tareas -->
+                <div class="slider-3d__item" data-category="software">
+                    <div class="project-card-3d">
+                        <div class="project-card-3d__inner">
+                            <div class="project-card-3d__front">
+                                <img src="assets/images/apptareas.svg" alt="App Tareas" class="project-card-3d__front-img">
+                                <div class="project-card-3d__overlay">
+                                    <h3>App de Tareas</h3>
+                                    <p><i class="fas fa-tasks"></i> <strong>Java + SQLite</strong> · Recordatorios</p>
+                                    <span class="tap-hint">👆 Toca para ver detalles</span>
+                                </div>
+                            </div>
+                            <div class="project-card-3d__back">
+                                <h3 class="project-card-3d__title">Aplicación de Tareas</h3>
+                                <p class="project-card-3d__description">Aplicación de escritorio para gestión de tareas con recordatorios y categorías.</p>
+                                <div class="project-card-3d__tech">
+                                    <span class="tech-tag">Java</span>
+                                    <span class="tech-tag">SQLite</span>
+                                    <span class="tech-tag">JavaFX</span>
+                                    <span class="tech-tag">Hibernate</span>
+                                </div>
+                                <div class="project-card-3d__features">
+                                    <h4>Características:</h4>
+                                    <ul>
+                                        <li>✓ CRUD de tareas</li>
+                                        <li>✓ Categorías personalizadas</li>
+                                        <li>✓ Recordatorios</li>
+                                        <li>✓ Búsqueda avanzada</li>
+                                    </ul>
+                                </div>
+                                <div class="project-card-3d__links">
+                                    <a href="https://github.com/tuusuario/app-tareas" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
+                                    <a href="demo.html?project=tareas&github=https://github.com/tuusuario/app-tareas" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROYECTO 10: Data Warehouse -->
+                <div class="slider-3d__item" data-category="database">
+                    <div class="project-card-3d">
+                        <div class="project-card-3d__inner">
+                            <div class="project-card-3d__front">
+                                <img src="assets/images/datawarehouse.svg" alt="Data Warehouse" class="project-card-3d__front-img">
+                                <div class="project-card-3d__overlay">
+                                    <h3>Data Warehouse</h3>
+                                    <p><i class="fas fa-cubes"></i> <strong>ETL + BI</strong> · Power BI</p>
+                                    <span class="tap-hint">👆 Toca para ver detalles</span>
+                                </div>
+                            </div>
+                            <div class="project-card-3d__back">
+                                <h3 class="project-card-3d__title">Data Warehouse</h3>
+                                <p class="project-card-3d__description">Diseño e implementación de Data Warehouse para análisis de ventas con procesos ETL.</p>
+                                <div class="project-card-3d__tech">
+                                    <span class="tech-tag">PostgreSQL</span>
+                                    <span class="tech-tag">Pentaho</span>
+                                    <span class="tech-tag">Power BI</span>
+                                    <span class="tech-tag">SQL</span>
+                                </div>
+                                <div class="project-card-3d__features">
+                                    <h4>Características:</h4>
+                                    <ul>
+                                        <li>✓ Modelo estrella</li>
+                                        <li>✓ Procesos ETL</li>
+                                        <li>✓ Cubos OLAP</li>
+                                        <li>✓ Dashboard Power BI</li>
+                                    </ul>
+                                </div>
+                                <div class="project-card-3d__links">
+                                    <a href="https://github.com/tuusuario/data-warehouse" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
+                                    <a href="demo.html?project=warehouse&github=https://github.com/tuusuario/data-warehouse" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
+
+            <!-- Controles del slider -->
+            <button class="slider-3d__control slider-3d__control--prev" id="sliderPrev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-3d__control slider-3d__control--next" id="sliderNext">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Indicadores de posición -->
+        <div class="slider-3d__dots" id="sliderDots"></div>
+    </div>
+</section>
 
         <!-- HABILIDADES TÉCNICAS -->
         <section id="habilidades" class="skills section">

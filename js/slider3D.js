@@ -1,8 +1,19 @@
 // js/slider3d.js
 class Slider3D {
     constructor() {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.init());
+        } else {
+            this.init();
+        }
+    }
+
+    init() {
         this.slider = document.getElementById('slider3d');
-        if (!this.slider) return;
+        if (!this.slider) {
+            console.warn('Slider3D: No se encontró el elemento #slider3d');
+            return;
+        }
         
         this.items = Array.from(document.querySelectorAll('.slider-3d__item'));
         this.prevBtn = document.getElementById('sliderPrev');
@@ -22,21 +33,6 @@ class Slider3D {
         this.currentX = 0;
         this.dragThreshold = 50;
         
-        this.init();
-        
-        // Prevenir propagación en enlaces
-        this.preventLinkPropagation();
-    }
-
-    preventLinkPropagation() {
-        document.querySelectorAll('.project-link-3d').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.stopPropagation();
-            });
-        });
-    }
-
-    init() {
         this.updateVisibleItems();
         this.createDots();
         this.updateClasses();
@@ -44,6 +40,51 @@ class Slider3D {
         this.setupFilters();
         this.setupDragEvents();
         this.startAutoPlay();
+        this.setupMobileCards();
+        
+        // Escuchar cambios de tamaño
+        window.addEventListener('resize', () => this.setupMobileCards());
+    }
+
+    setupMobileCards() {
+        const isMobile = window.innerWidth <= 768;
+        const cards = document.querySelectorAll('.project-card-3d');
+        
+        cards.forEach(card => {
+            // Remover eventos previos
+            card.removeEventListener('click', this.handleCardClick);
+            
+            if (isMobile) {
+                // En móvil: clic en la tarjeta para voltear (NO para navegar)
+                card.addEventListener('click', this.handleCardClick);
+            }
+        });
+    }
+
+    handleCardClick(e) {
+        // Prevenir que el clic se propague al slider
+        e.stopPropagation();
+        
+        // Si el clic fue en un enlace, no hacer flip
+        if (e.target.closest('a')) return;
+        
+        // Encontrar la tarjeta y su inner
+        const card = e.currentTarget;
+        const cardInner = card.querySelector('.project-card-3d__inner');
+        
+        if (!cardInner) return;
+        
+        const isFlipped = cardInner.classList.contains('flipped');
+        
+        // Cerrar otras tarjetas abiertas
+        document.querySelectorAll('.project-card-3d__inner').forEach(otherCard => {
+            if (otherCard !== cardInner) {
+                otherCard.classList.remove('flipped');
+            }
+        });
+        
+        // Abrir/cerrar la actual
+        cardInner.classList.toggle('flipped');
     }
 
     getVisibleItems() {
@@ -58,7 +99,6 @@ class Slider3D {
     updateVisibleItems() {
         this.visibleItems = this.getVisibleItems();
         
-        // Mostrar/ocultar items
         this.items.forEach(item => {
             if (this.visibleItems.includes(item)) {
                 item.style.display = 'block';
@@ -67,7 +107,6 @@ class Slider3D {
             }
         });
         
-        // Ajustar índice
         if (this.currentIndex >= this.visibleItems.length) {
             this.currentIndex = 0;
         }
@@ -95,14 +134,12 @@ class Slider3D {
     }
 
     updateClasses() {
-        // Remover clases de todos los items
         this.items.forEach(item => {
             item.classList.remove('active', 'prev', 'next', 'hide-left', 'hide-right');
         });
 
         if (this.visibleItems.length === 0) return;
 
-        // Asignar clases según posición
         this.visibleItems.forEach((item, index) => {
             if (index === this.currentIndex) {
                 item.classList.add('active');
@@ -146,22 +183,33 @@ class Slider3D {
         }
     }
 
-    // ===== DRAG FUNCIONALITY MEJORADA =====
     setupDragEvents() {
         if (!this.slider) return;
         
-        // Solo aplicar drag cuando se arrastra desde el fondo del slider, no desde enlaces
+        let dragStartTime;
+        
         this.slider.addEventListener('mousedown', (e) => {
-            if (e.target.closest('a')) return;
+            // No iniciar drag si se hizo clic en un enlace o en la tarjeta (para no interferir con hover)
+            if (e.target.closest('a') || e.target.closest('.project-card-3d')) return;
+            dragStartTime = Date.now();
             this.startDrag(e);
         });
         
         this.slider.addEventListener('mousemove', (e) => this.drag(e));
-        this.slider.addEventListener('mouseup', (e) => this.endDrag(e));
+        
+        this.slider.addEventListener('mouseup', (e) => {
+            const dragDuration = Date.now() - dragStartTime;
+            // Solo considerar como drag si duró más de 100ms o se movió lo suficiente
+            if (dragDuration > 100 || Math.abs(this.currentX - this.startX) > this.dragThreshold) {
+                this.endDrag(e);
+            }
+            dragStartTime = null;
+        });
+        
         this.slider.addEventListener('mouseleave', () => this.endDrag());
         
         this.slider.addEventListener('touchstart', (e) => {
-            if (e.target.closest('a')) return;
+            if (e.target.closest('a') || e.target.closest('.project-card-3d')) return;
             this.startDrag(e);
         });
         
@@ -189,6 +237,7 @@ class Slider3D {
         this.currentX = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
         const diff = this.currentX - this.startX;
         
+        // Feedback visual durante el drag
         const activeItem = this.visibleItems[this.currentIndex];
         if (activeItem) {
             const rotateY = diff * 0.1;
@@ -201,15 +250,17 @@ class Slider3D {
         
         const diff = this.currentX - this.startX;
         
+        // Resetear transformaciones
         this.visibleItems.forEach(item => {
             item.style.transform = '';
         });
         
+        // Cambiar de proyecto si el arrastre fue significativo
         if (Math.abs(diff) > this.dragThreshold) {
             if (diff > 0) {
-                this.prev();
+                this.prev(); // Arrastró a la derecha → proyecto anterior
             } else {
-                this.next();
+                this.next(); // Arrastró a la izquierda → proyecto siguiente
             }
         }
         
@@ -218,7 +269,6 @@ class Slider3D {
         this.startAutoPlay();
     }
 
-    // ===== FILTROS =====
     setupFilters() {
         this.filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -238,14 +288,8 @@ class Slider3D {
         this.stopAutoPlay();
         
         this.activeFilter = newFilter;
-        
-        // Actualizar items visibles
         this.updateVisibleItems();
-        
-        // Resetear índice
         this.currentIndex = 0;
-        
-        // Recrear dots y actualizar clases
         this.createDots();
         this.updateClasses();
         
@@ -253,7 +297,6 @@ class Slider3D {
         this.startAutoPlay();
     }
 
-    // ===== AUTO-PLAY =====
     startAutoPlay() {
         this.stopAutoPlay();
         if (this.visibleItems.length > 1) {
@@ -272,7 +315,6 @@ class Slider3D {
         }
     }
 
-    // ===== EVENT LISTENERS MEJORADOS =====
     addEventListeners() {
         if (this.prevBtn) {
             this.prevBtn.addEventListener('click', (e) => {
@@ -313,9 +355,5 @@ class Slider3D {
     }
 }
 
-// Inicializar
-document.addEventListener('DOMContentLoaded', () => {
-    if (document.getElementById('slider3d')) {
-        new Slider3D();
-    }
-});
+// Inicialización automática
+new Slider3D();
