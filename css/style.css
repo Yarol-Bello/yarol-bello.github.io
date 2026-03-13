@@ -2949,3 +2949,67 @@ body {
         }
     }
 }
+
+/* Animaciones para mensajes */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.form-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    z-index: 10000;
+    animation: slideIn 0.3s ease;
+    font-weight: 500;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.form-message--success {
+    background: var(--accent);
+    color: var(--bg-primary);
+}
+
+.form-message--error {
+    background: #ff3366;
+    color: white;
+}
+
+.success-message {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    border: 2px solid var(--accent);
+    animation: fadeIn 0.5s ease;
+}
+
+.success-message .icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.success-message h3 {
+    font-size: 1.8rem;
+    font-family: var(--font-display);
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--text-primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.success-message p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
