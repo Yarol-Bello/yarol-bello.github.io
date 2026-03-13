@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>YAROL BELLO | Mi portafolio</title>
 
-    <!-- Meta tags mejorados -->
+    <!-- Meta tags -->
     <meta name="description"
         content="Portafolio profesional de Yarol Bello - Estudiante de Ingeniería de Sistemas especializado en desarrollo de software, bases de datos e IA">
     <meta name="keywords"
         content="desarrollador junior, sistemas informáticos, bases de datos, Java, SQL, inteligencia artificial, portafolio programador">
     <meta name="author" content="Yarol Bello Coquil">
 
-    <!-- Open Graph / Redes Sociales -->
+    <!-- Open Graph -->
     <meta property="og:title" content="Yarol Bello | Portafolio Profesional">
     <meta property="og:description"
         content="Estudiante de Ingeniería de Sistemas - 5to ciclo. Especializado en desarrollo de software y bases de datos">
-    <meta property="og:image" content="assets/images/og-preview.jpg">
+    <meta property="og:image" content="assets/images/og-preview.png">
     <meta property="og:url" content="https://yarolbello.github.io/portfolio">
 
     <!-- Twitter Cards -->
@@ -25,29 +25,24 @@
     <meta name="twitter:title" content="Yarol Bello | Portafolio">
     <meta name="twitter:description" content="Descubre mis proyectos en desarrollo de software e IA">
 
-    <!-- Fuentes modernas -->
+    <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome para iconos -->
+    <!-- Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <!-- Flag Icons para banderas -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css">
-
-    <!-- Devicon para iconos de tecnología -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animations.css">
 
-    <!-- Favicon / Logo -->
-    <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/logo-dark.svg">
     <link rel="alternate icon" href="assets/icons/favicon.ico">
 </head>
 
@@ -55,7 +50,7 @@
     <!-- Partículas de fondo -->
     <div id="particles-js"></div>
 
-    <!-- Scroll indicator (visible solo en desktop) -->
+    <!-- Scroll indicator -->
     <div class="scroll-indicator">
         <span class="scroll-indicator__text">DESCUBRE MÁS</span>
         <div class="scroll-indicator__line"></div>
@@ -73,32 +68,36 @@
     <!-- HEADER -->
     <header class="header">
         <div class="header__container">
-            <!-- Logo -->
             <a href="#" class="logo">
                 <img src="assets/icons/logo-dark.svg" alt="Yarol Bello" class="logo__img logo__img--dark">
                 <img src="assets/icons/logo-white.svg" alt="Yarol Bello" class="logo__img logo__img--light">
                 <span class="logo__text">YAROL BELLO</span>
             </a>
 
-            <!-- Menú de navegación -->
             <nav class="nav">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="#inicio" class="nav__link active" data-text="INICIO">INICIO</a></li>
                     <li class="nav__item"><a href="#perfil" class="nav__link" data-text="PERFIL">PERFIL</a></li>
-                    <li class="nav__item"><a href="#proyectos" class="nav__link" data-text="PROYECTOS">PROYECTOS</a></li>
-                    <li class="nav__item"><a href="#habilidades" class="nav__link" data-text="HABILIDADES">HABILIDADES</a></li>
+                    <li class="nav__item"><a href="#proyectos" class="nav__link" data-text="PROYECTOS">PROYECTOS</a>
+                    </li>
+                    <li class="nav__item"><a href="#habilidades" class="nav__link"
+                            data-text="HABILIDADES">HABILIDADES</a></li>
+                    <li class="nav__item"><a href="#certificaciones" class="nav__link"
+                            data-text="CERTIFICACIONES">CERTIFICACIONES</a></li>
+                    <li class="nav__item"><a href="#idiomas" class="nav__link" data-text="IDIOMAS">IDIOMAS</a></li>
                     <li class="nav__item"><a href="#contacto" class="nav__link" data-text="CONTACTO">CONTACTO</a></li>
                 </ul>
             </nav>
 
-            <!-- Acciones (tema + menú móvil) -->
             <div class="header__actions">
                 <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
                     <svg class="sun-icon" viewBox="0 0 24 24">
-                        <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z" />
+                        <path
+                            d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z" />
                     </svg>
                     <svg class="moon-icon" viewBox="0 0 24 24">
-                        <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+                        <path
+                            d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
                     </svg>
                 </button>
                 <button class="menu-toggle" aria-label="Menú">
@@ -107,6 +106,38 @@
             </div>
         </div>
     </header>
+
+    <!-- QUICK NAV - Navegación Lateral -->
+    <div class="quick-nav quick-nav--lateral">
+        <a href="#inicio" class="quick-nav__item active" data-tooltip="Inicio">
+            <i class="fas fa-home quick-nav__icon"></i>
+            <span class="quick-nav__text">Inicio</span>
+        </a>
+        <a href="#perfil" class="quick-nav__item" data-tooltip="Perfil">
+            <i class="fas fa-user quick-nav__icon"></i>
+            <span class="quick-nav__text">Perfil</span>
+        </a>
+        <a href="#proyectos" class="quick-nav__item" data-tooltip="Proyectos">
+            <i class="fas fa-code quick-nav__icon"></i>
+            <span class="quick-nav__text">Proyectos</span>
+        </a>
+        <a href="#habilidades" class="quick-nav__item" data-tooltip="Habilidades">
+            <i class="fas fa-chart-bar quick-nav__icon"></i>
+            <span class="quick-nav__text">Habilidades</span>
+        </a>
+        <a href="#certificaciones" class="quick-nav__item" data-tooltip="Certificaciones">
+            <i class="fas fa-certificate quick-nav__icon"></i>
+            <span class="quick-nav__text">Certificaciones</span>
+        </a>
+        <a href="#idiomas" class="quick-nav__item" data-tooltip="Idiomas">
+            <i class="fas fa-language quick-nav__icon"></i>
+            <span class="quick-nav__text">Idiomas</span>
+        </a>
+        <a href="#contacto" class="quick-nav__item" data-tooltip="Contacto">
+            <i class="fas fa-envelope quick-nav__icon"></i>
+            <span class="quick-nav__text">Contacto</span>
+        </a>
+    </div>
 
     <main>
         <!-- HERO SECTION -->
@@ -128,22 +159,30 @@
                         <a href="#proyectos" class="btn btn--primary">
                             <span>EXPLORAR PROYECTOS</span>
                             <svg class="btn__icon" viewBox="0 0 24 24">
-                                <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z" />
+                                <path
+                                    d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z" />
                             </svg>
                         </a>
                         <a href="assets/docs/CV-Yarol-Bello.pdf" download class="btn btn--outline">
                             <span>DESCARGAR CV</span>
                             <svg class="btn__icon" viewBox="0 0 24 24">
-                                <path d="M16.59 9H15V4c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v5H7.41c-.89 0-1.34 1.08-.71 1.71l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.63-.63.19-1.71-.7-1.71zM5 19c0 .55.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1H6c-.55 0-1 .45-1 1z" />
+                                <path
+                                    d="M16.59 9H15V4c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v5H7.41c-.89 0-1.34 1.08-.71 1.71l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.63-.63.19-1.71-.7-1.71zM5 19c0 .55.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1H6c-.55 0-1 .45-1 1z" />
                             </svg>
                         </a>
                     </div>
                     <div class="hero__social">
-                        <a href="https://github.com/Yarol-Bello" target="_blank" rel="noopener noreferrer" class="social-link" data-tooltip="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/yarol-bello-coquil-6a5324254/" target="_blank" rel="noopener noreferrer" class="social-link" data-tooltip="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://x.com/DossAg_5" target="_blank" rel="noopener noreferrer" class="social-link" data-tooltip="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/yarol_bello/" target="_blank" rel="noopener noreferrer" class="social-link" data-tooltip="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="mailto:yarolbellocoquil@gmail.com" class="social-link" data-tooltip="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://github.com/Yarol-Bello" target="_blank" rel="noopener noreferrer"
+                            class="social-link" data-tooltip="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/yarol-bello-coquil-6a5324254/" target="_blank"
+                            rel="noopener noreferrer" class="social-link" data-tooltip="LinkedIn"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/DossAg_5" target="_blank" rel="noopener noreferrer" class="social-link"
+                            data-tooltip="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/yarol_bello/" target="_blank" rel="noopener noreferrer"
+                            class="social-link" data-tooltip="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="mailto:yarolbellocoquil@gmail.com" class="social-link" data-tooltip="Email"><i
+                                class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 <div class="hero__image animate-on-load delay-1">
@@ -167,11 +206,16 @@
                             <h3>Datos Personales</h3>
                         </div>
                         <div class="minimal-content">
-                            <div class="info-row"><span class="info-label">Ubicación</span><span class="info-value">Huancayo, Perú</span></div>
-                            <div class="info-row"><span class="info-label">Teléfono</span><span class="info-value">939 935 857</span></div>
-                            <div class="info-row"><span class="info-label">Email</span><span class="info-value">yarolbellocoquil@gmail.com</span></div>
-                            <div class="info-row"><span class="info-label">Ciclo</span><span class="info-value">5to</span></div>
-                            <div class="info-row"><span class="info-label">Disponibilidad</span><span class="info-value">Prácticas</span></div>
+                            <div class="info-row"><span class="info-label">Ubicación</span><span
+                                    class="info-value">Huancayo, Perú</span></div>
+                            <div class="info-row"><span class="info-label">Teléfono</span><span class="info-value">939
+                                    935 857</span></div>
+                            <div class="info-row"><span class="info-label">Email</span><span
+                                    class="info-value">yarolbellocoquil@gmail.com</span></div>
+                            <div class="info-row"><span class="info-label">Ciclo</span><span
+                                    class="info-value">5to</span></div>
+                            <div class="info-row"><span class="info-label">Disponibilidad</span><span
+                                    class="info-value">Prácticas</span></div>
                         </div>
                     </div>
                     <!-- Formación -->
@@ -182,9 +226,27 @@
                         </div>
                         <div class="minimal-content">
                             <div class="timeline-minimal">
-                                <div class="timeline-item-minimal"><div class="timeline-dot"></div><div class="timeline-text"><h4>Ingeniería de Sistemas</h4><p>UTP · 2024 - Actualidad</p></div></div>
-                                <div class="timeline-item-minimal"><div class="timeline-dot"></div><div class="timeline-text"><h4>Ing. Software con IA</h4><p>SENATI · 2021-2023 · Egresado</p></div></div>
-                                <div class="timeline-item-minimal"><div class="timeline-dot"></div><div class="timeline-text"><h4>Beca Continuidad</h4><p>PRONABEC</p></div></div>
+                                <div class="timeline-item-minimal">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-text">
+                                        <h4>Ingeniería de Sistemas</h4>
+                                        <p>UTP · 2024 - Actualidad</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item-minimal">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-text">
+                                        <h4>Ing. Software con IA</h4>
+                                        <p>SENATI · 2021-2023 · Egresado</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item-minimal">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-text">
+                                        <h4>Beca Continuidad</h4>
+                                        <p>PRONABEC</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -196,10 +258,14 @@
                         </div>
                         <div class="minimal-content">
                             <div class="badges-minimal">
-                                <div class="badge-minimal"><i class="fas fa-database"></i><span>Database Design</span></div>
-                                <div class="badge-minimal"><i class="fab fa-java"></i><span>Java Fundamentals</span></div>
-                                <div class="badge-minimal"><i class="fas fa-store"></i><span>Sistema de Ventas</span></div>
-                                <div class="badge-minimal"><i class="fas fa-project-diagram"></i><span>Diseño BD</span></div>
+                                <div class="badge-minimal"><i class="fas fa-database"></i><span>Database Design</span>
+                                </div>
+                                <div class="badge-minimal"><i class="fab fa-java"></i><span>Java Fundamentals</span>
+                                </div>
+                                <div class="badge-minimal"><i class="fas fa-store"></i><span>Sistema de Ventas</span>
+                                </div>
+                                <div class="badge-minimal"><i class="fas fa-project-diagram"></i><span>Diseño BD</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -207,427 +273,38 @@
             </div>
         </section>
 
-        <!-- PROYECTOS CON SLIDER 3D - VERSIÓN FINAL (HOVER EN DESKTOP, CLIC EN MÓVIL) -->
-<section id="proyectos" class="projects section">
-    <div class="container">
-        <h2 class="section__title"><span class="section__title-prefix">//</span>PROYECTOS DESTACADOS</h2>
+        <!-- PROYECTOS CON SLIDER 3D -->
+        <section id="proyectos" class="projects section">
+            <div class="container">
+                <h2 class="section__title"><span class="section__title-prefix">//</span>PROYECTOS DESTACADOS</h2>
 
-        <!-- FILTROS -->
-        <div class="projects__filters" id="projectFilters">
-            <button class="filter-btn active" data-filter="all">TODOS</button>
-            <button class="filter-btn" data-filter="software">SOFTWARE</button>
-            <button class="filter-btn" data-filter="database">BD</button>
-            <button class="filter-btn" data-filter="web">WEB</button>
-        </div>
-
-        <!-- SLIDER 3D -->
-        <div class="slider-3d-container">
-            <div class="slider-3d" id="slider3d">
-
-                <!-- PROYECTO 1: Sistema de Ventas -->
-                <div class="slider-3d__item" data-category="software database">
-                    <div class="project-card-3d">
-                        <div class="project-card-3d__inner">
-                            <div class="project-card-3d__front">
-                                <img src="assets/images/sistemaventas.svg" alt="Sistema de Ventas" class="project-card-3d__front-img">
-                                <div class="project-card-3d__overlay">
-                                    <h3>Sistema de Ventas</h3>
-                                    <p><i class="fas fa-location-dot"></i> <strong>Cevichería Local</strong> · Huancayo</p>
-                                    <span class="tap-hint">👆 Toca para ver detalles</span>
-                                </div>
-                            </div>
-                            <div class="project-card-3d__back">
-                                <h3 class="project-card-3d__title">Sistema de Ventas</h3>
-                                <p class="project-card-3d__description">Desarrollo de sistema de registro de ventas para cevichería local. Incluye gestión de productos, clientes y reportes diarios.</p>
-                                <div class="project-card-3d__tech">
-                                    <span class="tech-tag">Java</span>
-                                    <span class="tech-tag">MySQL</span>
-                                    <span class="tech-tag">JDBC</span>
-                                    <span class="tech-tag">Swing</span>
-                                </div>
-                                <div class="project-card-3d__features">
-                                    <h4>Características:</h4>
-                                    <ul>
-                                        <li>✓ Registro de ventas</li>
-                                        <li>✓ Control de inventario</li>
-                                        <li>✓ Reportes diarios</li>
-                                        <li>✓ Gestión de clientes</li>
-                                    </ul>
-                                </div>
-                                <div class="project-card-3d__links">
-                                    <a href="https://github.com/tuusuario/sistema-ventas" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
-                                    <a href="demo.html?project=ventas&github=https://github.com/tuusuario/sistema-ventas" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- FILTROS -->
+                <div class="projects__filters" id="projectFilters">
+                    <button class="filter-btn active" data-filter="all">TODOS</button>
+                    <button class="filter-btn" data-filter="software">SOFTWARE</button>
+                    <button class="filter-btn" data-filter="database">BD</button>
+                    <button class="filter-btn" data-filter="web">WEB</button>
                 </div>
 
-                <!-- PROYECTO 2: Sistema de Inventario -->
-                <div class="slider-3d__item" data-category="software database">
-                    <div class="project-card-3d">
-                        <div class="project-card-3d__inner">
-                            <div class="project-card-3d__front">
-                                <img src="assets/images/sistemainventario.svg" alt="Sistema de Inventario" class="project-card-3d__front-img">
-                                <div class="project-card-3d__overlay">
-                                    <h3>Sistema de Inventario</h3>
-                                    <p><i class="fas fa-warehouse"></i> <strong>Control de stock</strong> · Tiempo real</p>
-                                    <span class="tap-hint">👆 Toca para ver detalles</span>
-                                </div>
-                            </div>
-                            <div class="project-card-3d__back">
-                                <h3 class="project-card-3d__title">Sistema de Inventario</h3>
-                                <p class="project-card-3d__description">Aplicación para gestión de inventario con alertas de stock mínimo y generación de códigos de barras.</p>
-                                <div class="project-card-3d__tech">
-                                    <span class="tech-tag">Python</span>
-                                    <span class="tech-tag">SQLite</span>
-                                    <span class="tech-tag">Tkinter</span>
-                                    <span class="tech-tag">ReportLab</span>
-                                </div>
-                                <div class="project-card-3d__features">
-                                    <h4>Características:</h4>
-                                    <ul>
-                                        <li>✓ Control de stock</li>
-                                        <li>✓ Alertas automáticas</li>
-                                        <li>✓ Generación de reportes</li>
-                                        <li>✓ Códigos de barras</li>
-                                    </ul>
-                                </div>
-                                <div class="project-card-3d__links">
-                                    <a href="https://github.com/tuusuario/sistema-inventario" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
-                                    <a href="demo.html?project=inventario&github=https://github.com/tuusuario/sistema-inventario" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                </div>
-                            </div>
-                        </div>
+                <!-- SLIDER 3D -->
+                <div class="slider-3d-container">
+                    <div class="slider-3d" id="slider3d">
+                        <!-- Los proyectos se cargarán dinámicamente desde slider3d.js -->
                     </div>
+
+                    <!-- Controles del slider -->
+                    <button class="slider-3d__control slider-3d__control--prev" id="sliderPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-3d__control slider-3d__control--next" id="sliderNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
 
-                <!-- PROYECTO 3: Portafolio Web -->
-                <div class="slider-3d__item" data-category="web">
-                    <div class="project-card-3d">
-                        <div class="project-card-3d__inner">
-                            <div class="project-card-3d__front">
-                                <img src="assets/images/portafolioweb.svg" alt="Portafolio Web" class="project-card-3d__front-img">
-                                <div class="project-card-3d__overlay">
-                                    <h3>Portafolio Web</h3>
-                                    <p><i class="fas fa-laptop-code"></i> <strong>Diseño responsivo</strong> · 2026</p>
-                                    <span class="tap-hint">👆 Toca para ver detalles</span>
-                                </div>
-                            </div>
-                            <div class="project-card-3d__back">
-                                <h3 class="project-card-3d__title">Portafolio Web Profesional</h3>
-                                <p class="project-card-3d__description">Desarrollo de portafolio personal con diseño moderno, animaciones y efectos visuales avanzados.</p>
-                                <div class="project-card-3d__tech">
-                                    <span class="tech-tag">HTML5</span>
-                                    <span class="tech-tag">CSS3</span>
-                                    <span class="tech-tag">JavaScript</span>
-                                    <span class="tech-tag">GSAP</span>
-                                </div>
-                                <div class="project-card-3d__features">
-                                    <h4>Características:</h4>
-                                    <ul>
-                                        <li>✓ Diseño responsivo</li>
-                                        <li>✓ Animaciones fluidas</li>
-                                        <li>✓ Modo oscuro/claro</li>
-                                        <li>✓ Optimizado SEO</li>
-                                    </ul>
-                                </div>
-                                <div class="project-card-3d__links">
-                                    <a href="https://github.com/tuusuario/portafolio" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
-                                    <a href="demo.html?project=web&github=https://github.com/tuusuario/portafolio" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PROYECTO 4: BD Biblioteca -->
-                <div class="slider-3d__item" data-category="database">
-                    <div class="project-card-3d">
-                        <div class="project-card-3d__inner">
-                            <div class="project-card-3d__front">
-                                <img src="assets/images/bdbiblioteca.svg" alt="BD Biblioteca" class="project-card-3d__front-img">
-                                <div class="project-card-3d__overlay">
-                                    <h3>BD Biblioteca</h3>
-                                    <p><i class="fas fa-database"></i> <strong>Modelo relacional</strong> · 3FN</p>
-                                    <span class="tap-hint">👆 Toca para ver detalles</span>
-                                </div>
-                            </div>
-                            <div class="project-card-3d__back">
-                                <h3 class="project-card-3d__title">Base de Datos Biblioteca</h3>
-                                <p class="project-card-3d__description">Diseño completo de base de datos para sistema de biblioteca con procedimientos almacenados y triggers.</p>
-                                <div class="project-card-3d__tech">
-                                    <span class="tech-tag">MySQL</span>
-                                    <span class="tech-tag">Workbench</span>
-                                    <span class="tech-tag">Stored Procedures</span>
-                                    <span class="tech-tag">Triggers</span>
-                                </div>
-                                <div class="project-card-3d__features">
-                                    <h4>Características:</h4>
-                                    <ul>
-                                        <li>✓ Modelo E-R completo</li>
-                                        <li>✓ Normalización 3FN</li>
-                                        <li>✓ Consultas complejas</li>
-                                        <li>✓ Backup automático</li>
-                                    </ul>
-                                </div>
-                                <div class="project-card-3d__links">
-                                    <a href="https://github.com/tuusuario/bd-biblioteca" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
-                                    <a href="demo.html?project=bd&github=https://github.com/tuusuario/bd-biblioteca" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PROYECTO 5: Aplicación de Clima -->
-                <div class="slider-3d__item" data-category="web">
-                    <div class="project-card-3d">
-                        <div class="project-card-3d__inner">
-                            <div class="project-card-3d__front">
-                                <img src="assets/images/appclima.svg" alt="App del Clima" class="project-card-3d__front-img">
-                                <div class="project-card-3d__overlay">
-                                    <h3>App del Clima</h3>
-                                    <p><i class="fas fa-cloud-sun"></i> <strong>API OpenWeatherMap</strong> · React</p>
-                                    <span class="tap-hint">👆 Toca para ver detalles</span>
-                                </div>
-                            </div>
-                            <div class="project-card-3d__back">
-                                <h3 class="project-card-3d__title">App del Clima</h3>
-                                <p class="project-card-3d__description">Aplicación web que muestra el clima actual y pronóstico usando la API de OpenWeatherMap.</p>
-                                <div class="project-card-3d__tech">
-                                    <span class="tech-tag">React</span>
-                                    <span class="tech-tag">API REST</span>
-                                    <span class="tech-tag">CSS3</span>
-                                    <span class="tech-tag">Axios</span>
-                                </div>
-                                <div class="project-card-3d__features">
-                                    <h4>Características:</h4>
-                                    <ul>
-                                        <li>✓ Búsqueda por ciudad</li>
-                                        <li>✓ Geolocalización</li>
-                                        <li>✓ Pronóstico 5 días</li>
-                                        <li>✓ Modo oscuro/claro</li>
-                                    </ul>
-                                </div>
-                                <div class="project-card-3d__links">
-                                    <a href="https://github.com/tuusuario/app-clima" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
-                                    <a href="demo.html?project=clima&github=https://github.com/tuusuario/app-clima" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PROYECTO 6: API REST -->
-                <div class="slider-3d__item" data-category="software">
-                    <div class="project-card-3d">
-                        <div class="project-card-3d__inner">
-                            <div class="project-card-3d__front">
-                                <img src="assets/images/apirest.svg" alt="API REST" class="project-card-3d__front-img">
-                                <div class="project-card-3d__overlay">
-                                    <h3>API REST</h3>
-                                    <p><i class="fas fa-code-branch"></i> <strong>Node.js + Express</strong> · JWT</p>
-                                    <span class="tap-hint">👆 Toca para ver detalles</span>
-                                </div>
-                            </div>
-                            <div class="project-card-3d__back">
-                                <h3 class="project-card-3d__title">API REST con Node.js</h3>
-                                <p class="project-card-3d__description">Desarrollo de API RESTful para gestión de usuarios y productos con autenticación JWT.</p>
-                                <div class="project-card-3d__tech">
-                                    <span class="tech-tag">Node.js</span>
-                                    <span class="tech-tag">Express</span>
-                                    <span class="tech-tag">MongoDB</span>
-                                    <span class="tech-tag">JWT</span>
-                                </div>
-                                <div class="project-card-3d__features">
-                                    <h4>Características:</h4>
-                                    <ul>
-                                        <li>✓ CRUD completo</li>
-                                        <li>✓ Autenticación JWT</li>
-                                        <li>✓ Middlewares</li>
-                                        <li>✓ Documentación Swagger</li>
-                                    </ul>
-                                </div>
-                                <div class="project-card-3d__links">
-                                    <a href="https://github.com/tuusuario/api-rest" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
-                                    <a href="demo.html?project=api&github=https://github.com/tuusuario/api-rest" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PROYECTO 7: MySQL Avanzada -->
-                <div class="slider-3d__item" data-category="database">
-                    <div class="project-card-3d">
-                        <div class="project-card-3d__inner">
-                            <div class="project-card-3d__front">
-                                <img src="assets/images/mysqlavanzada.svg" alt="MySQL Avanzada" class="project-card-3d__front-img">
-                                <div class="project-card-3d__overlay">
-                                    <h3>BD MySQL Avanzada</h3>
-                                    <p><i class="fas fa-chart-line"></i> <strong>Optimización</strong> · 50k+ registros</p>
-                                    <span class="tap-hint">👆 Toca para ver detalles</span>
-                                </div>
-                            </div>
-                            <div class="project-card-3d__back">
-                                <h3 class="project-card-3d__title">Base de Datos MySQL Avanzada</h3>
-                                <p class="project-card-3d__description">Diseño e implementación de base de datos optimizada para sistema de ventas con 50,000+ registros.</p>
-                                <div class="project-card-3d__tech">
-                                    <span class="tech-tag">MySQL</span>
-                                    <span class="tech-tag">Índices</span>
-                                    <span class="tech-tag">Stored Procedures</span>
-                                    <span class="tech-tag">Triggers</span>
-                                </div>
-                                <div class="project-card-3d__features">
-                                    <h4>Características:</h4>
-                                    <ul>
-                                        <li>✓ Optimización de queries</li>
-                                        <li>✓ Índices compuestos</li>
-                                        <li>✓ Vistas materializadas</li>
-                                        <li>✓ Backup automático</li>
-                                    </ul>
-                                </div>
-                                <div class="project-card-3d__links">
-                                    <a href="https://github.com/tuusuario/mysql-avanzado" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
-                                    <a href="demo.html?project=mysql&github=https://github.com/tuusuario/mysql-avanzado" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PROYECTO 8: Dashboard Admin -->
-                <div class="slider-3d__item" data-category="web">
-                    <div class="project-card-3d">
-                        <div class="project-card-3d__inner">
-                            <div class="project-card-3d__front">
-                                <img src="assets/images/dashboard.svg" alt="Dashboard Admin" class="project-card-3d__front-img">
-                                <div class="project-card-3d__overlay">
-                                    <h3>Dashboard Admin</h3>
-                                    <p><i class="fas fa-chart-pie"></i> <strong>Analítica</strong> · Tiempo real</p>
-                                    <span class="tap-hint">👆 Toca para ver detalles</span>
-                                </div>
-                            </div>
-                            <div class="project-card-3d__back">
-                                <h3 class="project-card-3d__title">Dashboard Administrativo</h3>
-                                <p class="project-card-3d__description">Panel de control con gráficos interactivos y datos en tiempo real para análisis de ventas.</p>
-                                <div class="project-card-3d__tech">
-                                    <span class="tech-tag">Vue.js</span>
-                                    <span class="tech-tag">Chart.js</span>
-                                    <span class="tech-tag">Firebase</span>
-                                    <span class="tech-tag">Tailwind</span>
-                                </div>
-                                <div class="project-card-3d__features">
-                                    <h4>Características:</h4>
-                                    <ul>
-                                        <li>✓ Gráficos interactivos</li>
-                                        <li>✓ Datos en tiempo real</li>
-                                        <li>✓ Filtros dinámicos</li>
-                                        <li>✓ Exportar reportes</li>
-                                    </ul>
-                                </div>
-                                <div class="project-card-3d__links">
-                                    <a href="https://github.com/tuusuario/dashboard" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
-                                    <a href="demo.html?project=dashboard&github=https://github.com/tuusuario/dashboard" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PROYECTO 9: App de Tareas -->
-                <div class="slider-3d__item" data-category="software">
-                    <div class="project-card-3d">
-                        <div class="project-card-3d__inner">
-                            <div class="project-card-3d__front">
-                                <img src="assets/images/apptareas.svg" alt="App Tareas" class="project-card-3d__front-img">
-                                <div class="project-card-3d__overlay">
-                                    <h3>App de Tareas</h3>
-                                    <p><i class="fas fa-tasks"></i> <strong>Java + SQLite</strong> · Recordatorios</p>
-                                    <span class="tap-hint">👆 Toca para ver detalles</span>
-                                </div>
-                            </div>
-                            <div class="project-card-3d__back">
-                                <h3 class="project-card-3d__title">Aplicación de Tareas</h3>
-                                <p class="project-card-3d__description">Aplicación de escritorio para gestión de tareas con recordatorios y categorías.</p>
-                                <div class="project-card-3d__tech">
-                                    <span class="tech-tag">Java</span>
-                                    <span class="tech-tag">SQLite</span>
-                                    <span class="tech-tag">JavaFX</span>
-                                    <span class="tech-tag">Hibernate</span>
-                                </div>
-                                <div class="project-card-3d__features">
-                                    <h4>Características:</h4>
-                                    <ul>
-                                        <li>✓ CRUD de tareas</li>
-                                        <li>✓ Categorías personalizadas</li>
-                                        <li>✓ Recordatorios</li>
-                                        <li>✓ Búsqueda avanzada</li>
-                                    </ul>
-                                </div>
-                                <div class="project-card-3d__links">
-                                    <a href="https://github.com/tuusuario/app-tareas" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
-                                    <a href="demo.html?project=tareas&github=https://github.com/tuusuario/app-tareas" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PROYECTO 10: Data Warehouse -->
-                <div class="slider-3d__item" data-category="database">
-                    <div class="project-card-3d">
-                        <div class="project-card-3d__inner">
-                            <div class="project-card-3d__front">
-                                <img src="assets/images/datawarehouse.svg" alt="Data Warehouse" class="project-card-3d__front-img">
-                                <div class="project-card-3d__overlay">
-                                    <h3>Data Warehouse</h3>
-                                    <p><i class="fas fa-cubes"></i> <strong>ETL + BI</strong> · Power BI</p>
-                                    <span class="tap-hint">👆 Toca para ver detalles</span>
-                                </div>
-                            </div>
-                            <div class="project-card-3d__back">
-                                <h3 class="project-card-3d__title">Data Warehouse</h3>
-                                <p class="project-card-3d__description">Diseño e implementación de Data Warehouse para análisis de ventas con procesos ETL.</p>
-                                <div class="project-card-3d__tech">
-                                    <span class="tech-tag">PostgreSQL</span>
-                                    <span class="tech-tag">Pentaho</span>
-                                    <span class="tech-tag">Power BI</span>
-                                    <span class="tech-tag">SQL</span>
-                                </div>
-                                <div class="project-card-3d__features">
-                                    <h4>Características:</h4>
-                                    <ul>
-                                        <li>✓ Modelo estrella</li>
-                                        <li>✓ Procesos ETL</li>
-                                        <li>✓ Cubos OLAP</li>
-                                        <li>✓ Dashboard Power BI</li>
-                                    </ul>
-                                </div>
-                                <div class="project-card-3d__links">
-                                    <a href="https://github.com/tuusuario/data-warehouse" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fab fa-github"></i> Código</a>
-                                    <a href="demo.html?project=warehouse&github=https://github.com/tuusuario/data-warehouse" target="_blank" rel="noopener noreferrer" class="project-link-3d" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- Indicadores de posición -->
+                <div class="slider-3d__dots" id="sliderDots"></div>
             </div>
-
-            <!-- Controles del slider -->
-            <button class="slider-3d__control slider-3d__control--prev" id="sliderPrev">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="slider-3d__control slider-3d__control--next" id="sliderNext">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-        </div>
-
-        <!-- Indicadores de posición -->
-        <div class="slider-3d__dots" id="sliderDots"></div>
-    </div>
-</section>
+        </section>
 
         <!-- HABILIDADES TÉCNICAS -->
         <section id="habilidades" class="skills section">
@@ -638,30 +315,126 @@
                     <div class="skills__category">
                         <h3 class="skills__category-title"><span class="category-icon">⌨️</span>LENGUAJES</h3>
                         <div class="skills__grid">
-                            <div class="skill-item"><div class="skill-item__header"><span class="skill-item__name">Java</span><span class="skill-item__level">Básico</span></div><div class="skill-item__bar"><div class="skill-item__progress" style="width: 60%"></div></div></div>
-                            <div class="skill-item"><div class="skill-item__header"><span class="skill-item__name">SQL</span><span class="skill-item__level">Intermedio</span></div><div class="skill-item__bar"><div class="skill-item__progress" style="width: 75%"></div></div></div>
-                            <div class="skill-item"><div class="skill-item__header"><span class="skill-item__name">HTML5/CSS3</span><span class="skill-item__level">Básico</span></div><div class="skill-item__bar"><div class="skill-item__progress" style="width: 65%"></div></div></div>
-                            <div class="skill-item"><div class="skill-item__header"><span class="skill-item__name">Python</span><span class="skill-item__level">Básico</span></div><div class="skill-item__bar"><div class="skill-item__progress" style="width: 50%"></div></div></div>
+                            <div class="skill-item">
+                                <div class="skill-item__header">
+                                    <span class="skill-item__name">Java</span>
+                                    <span class="skill-item__level">Básico</span>
+                                </div>
+                                <div class="skill-item__bar">
+                                    <div class="skill-item__progress" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__header">
+                                    <span class="skill-item__name">SQL</span>
+                                    <span class="skill-item__level">Intermedio</span>
+                                </div>
+                                <div class="skill-item__bar">
+                                    <div class="skill-item__progress" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__header">
+                                    <span class="skill-item__name">HTML5/CSS3</span>
+                                    <span class="skill-item__level">Básico</span>
+                                </div>
+                                <div class="skill-item__bar">
+                                    <div class="skill-item__progress" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__header">
+                                    <span class="skill-item__name">Python</span>
+                                    <span class="skill-item__level">Básico</span>
+                                </div>
+                                <div class="skill-item__bar">
+                                    <div class="skill-item__progress" style="width: 50%"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- Bases de Datos -->
                     <div class="skills__category">
                         <h3 class="skills__category-title"><span class="category-icon">🗄️</span>BASES DE DATOS</h3>
                         <div class="skills__grid">
-                            <div class="skill-item"><div class="skill-item__header"><span class="skill-item__name">MySQL</span><span class="skill-item__level">Intermedio</span></div><div class="skill-item__bar"><div class="skill-item__progress" style="width: 80%"></div></div></div>
-                            <div class="skill-item"><div class="skill-item__header"><span class="skill-item__name">SQLite</span><span class="skill-item__level">Básico</span></div><div class="skill-item__bar"><div class="skill-item__progress" style="width: 60%"></div></div></div>
-                            <div class="skill-item"><div class="skill-item__header"><span class="skill-item__name">Diseño BD</span><span class="skill-item__level">Avanzado</span></div><div class="skill-item__bar"><div class="skill-item__progress" style="width: 85%"></div></div></div>
-                            <div class="skill-item"><div class="skill-item__header"><span class="skill-item__name">Normalización</span><span class="skill-item__level">Avanzado</span></div><div class="skill-item__bar"><div class="skill-item__progress" style="width: 90%"></div></div></div>
+                            <div class="skill-item">
+                                <div class="skill-item__header">
+                                    <span class="skill-item__name">MySQL</span>
+                                    <span class="skill-item__level">Intermedio</span>
+                                </div>
+                                <div class="skill-item__bar">
+                                    <div class="skill-item__progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__header">
+                                    <span class="skill-item__name">SQLite</span>
+                                    <span class="skill-item__level">Básico</span>
+                                </div>
+                                <div class="skill-item__bar">
+                                    <div class="skill-item__progress" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__header">
+                                    <span class="skill-item__name">Diseño BD</span>
+                                    <span class="skill-item__level">Avanzado</span>
+                                </div>
+                                <div class="skill-item__bar">
+                                    <div class="skill-item__progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__header">
+                                    <span class="skill-item__name">Normalización</span>
+                                    <span class="skill-item__level">Avanzado</span>
+                                </div>
+                                <div class="skill-item__bar">
+                                    <div class="skill-item__progress" style="width: 90%"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- Herramientas -->
                     <div class="skills__category">
                         <h3 class="skills__category-title"><span class="category-icon">🛠️</span>HERRAMIENTAS</h3>
                         <div class="skills__grid">
-                            <div class="skill-item"><div class="skill-item__header"><span class="skill-item__name">Git/GitHub</span><span class="skill-item__level">Básico</span></div><div class="skill-item__bar"><div class="skill-item__progress" style="width: 55%"></div></div></div>
-                            <div class="skill-item"><div class="skill-item__header"><span class="skill-item__name">VS Code</span><span class="skill-item__level">Intermedio</span></div><div class="skill-item__bar"><div class="skill-item__progress" style="width: 70%"></div></div></div>
-                            <div class="skill-item"><div class="skill-item__header"><span class="skill-item__name">MySQL Workbench</span><span class="skill-item__level">Intermedio</span></div><div class="skill-item__bar"><div class="skill-item__progress" style="width: 75%"></div></div></div>
-                            <div class="skill-item"><div class="skill-item__header"><span class="skill-item__name">Office 365</span><span class="skill-item__level">Avanzado</span></div><div class="skill-item__bar"><div class="skill-item__progress" style="width: 90%"></div></div></div>
+                            <div class="skill-item">
+                                <div class="skill-item__header">
+                                    <span class="skill-item__name">Git/GitHub</span>
+                                    <span class="skill-item__level">Básico</span>
+                                </div>
+                                <div class="skill-item__bar">
+                                    <div class="skill-item__progress" style="width: 55%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__header">
+                                    <span class="skill-item__name">VS Code</span>
+                                    <span class="skill-item__level">Intermedio</span>
+                                </div>
+                                <div class="skill-item__bar">
+                                    <div class="skill-item__progress" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__header">
+                                    <span class="skill-item__name">MySQL Workbench</span>
+                                    <span class="skill-item__level">Intermedio</span>
+                                </div>
+                                <div class="skill-item__bar">
+                                    <div class="skill-item__progress" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__header">
+                                    <span class="skill-item__name">Office 365</span>
+                                    <span class="skill-item__level">Avanzado</span>
+                                </div>
+                                <div class="skill-item__bar">
+                                    <div class="skill-item__progress" style="width: 90%"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- Habilidades Blandas -->
@@ -680,11 +453,11 @@
             </div>
         </section>
 
-        <!-- CERTIFICACIONES - CARRUSEL HORIZONTAL -->
+        <!-- CERTIFICACIONES -->
         <section id="certificaciones" class="certifications section">
             <div class="container">
                 <h2 class="section__title"><span class="section__title-prefix">//</span>CERTIFICACIONES</h2>
-                
+
                 <div class="certs-scroll" id="certsScroll">
                     <div class="certs-track">
                         <!-- Certificación 1: Oracle Database -->
@@ -693,7 +466,11 @@
                             <div class="cert-icon"><i class="devicon-oracle-original colored"></i></div>
                             <h3>Database Design</h3>
                             <p>Oracle Academy · 2024</p>
-                            <div class="cert-skills"><span>Modelado E-R</span><span>Normalización</span><span>SQL</span></div>
+                            <div class="cert-skills">
+                                <span>Modelado E-R</span>
+                                <span>Normalización</span>
+                                <span>SQL</span>
+                            </div>
                         </div>
                         <!-- Certificación 2: Java Fundamentals -->
                         <div class="cert-scroll-card">
@@ -701,7 +478,11 @@
                             <div class="cert-icon"><i class="devicon-java-plain colored"></i></div>
                             <h3>Java Fundamentals</h3>
                             <p>Oracle Academy · 2023</p>
-                            <div class="cert-skills"><span>POO</span><span>Java SE</span><span>Algoritmos</span></div>
+                            <div class="cert-skills">
+                                <span>POO</span>
+                                <span>Java SE</span>
+                                <span>Algoritmos</span>
+                            </div>
                         </div>
                         <!-- Certificación 3: SENATI -->
                         <div class="cert-scroll-card">
@@ -709,7 +490,11 @@
                             <div class="cert-icon"><i class="fas fa-graduation-cap"></i></div>
                             <h3>Ing. Software con IA</h3>
                             <p>SENATI · 2021-2023</p>
-                            <div class="cert-skills"><span>Fundamentos IA</span><span>Desarrollo SW</span><span>Metodologías ágiles</span></div>
+                            <div class="cert-skills">
+                                <span>Fundamentos IA</span>
+                                <span>Desarrollo SW</span>
+                                <span>Metodologías ágiles</span>
+                            </div>
                         </div>
                         <!-- Certificación 4: Próxima -->
                         <div class="cert-scroll-card">
@@ -737,7 +522,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="scroll-hint">
                     <i class="fas fa-arrow-left"></i>
                     <span>Desliza para ver más certificaciones</span>
@@ -751,7 +536,7 @@
             <div class="container">
                 <h2 class="section__title"><span class="section__title-prefix">//</span>IDIOMAS</h2>
                 <div class="languages__grid-compact">
-                    <!-- Español - Nativo (C2) -->
+                    <!-- Español - Nativo -->
                     <div class="language-card-compact">
                         <div class="compact-header">
                             <div class="compact-flag"><span class="fi fi-es"></span></div>
@@ -762,7 +547,7 @@
                         </div>
                         <div class="compact-indicator"><i class="fas fa-crown"></i></div>
                     </div>
-                    <!-- Inglés - Básico A2 -->
+                    <!-- Inglés -->
                     <div class="language-card-compact">
                         <div class="compact-header">
                             <div class="compact-flag"><span class="fi fi-gb"></span></div>
@@ -773,7 +558,7 @@
                         </div>
                         <div class="compact-indicator"><i class="fas fa-seedling"></i></div>
                     </div>
-                    <!-- Quechua - Básico (A1) -->
+                    <!-- Quechua -->
                     <div class="language-card-compact">
                         <div class="compact-header">
                             <div class="compact-flag"><span class="fi fi-pe"></span></div>
@@ -785,7 +570,6 @@
                         <div class="compact-indicator"><i class="fas fa-leaf"></i></div>
                     </div>
                 </div>
-                <!-- Leyenda del MCER -->
                 <div class="mcer-legend">
                     <span><span class="legend-badge">A1/A2</span> Básico</span>
                     <span><span class="legend-badge">B1/B2</span> Intermedio</span>
@@ -794,44 +578,107 @@
             </div>
         </section>
 
-        <!-- CONTACTO -->
-        <section id="contacto" class="contact section">
-            <div class="container">
-                <h2 class="section__title"><span class="section__title-prefix">//</span>CONTACTO</h2>
-                <div class="contact__container">
-                    <div class="contact__info">
-                        <div class="contact__item">
-                            <div class="contact__icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
-                            <div class="contact__text"><h4>Email</h4><a href="mailto:yarolbellocoquil@gmail.com">yarolbellocoquil@gmail.com</a></div>
-                        </div>
-                        <div class="contact__item">
-                            <div class="contact__icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
-                            <div class="contact__text"><h4>Teléfono</h4><a href="tel:+51939935857">+51 939 935 857</a></div>
-                        </div>
-                        <div class="contact__item">
-                            <div class="contact__icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
-                            <div class="contact__text"><h4>Ubicación</h4><p>Huancán, Huancayo, Junín</p></div>
-                        </div>
+        <!-- CONTACTO - CON FORMSUBMIT -->
+<section id="contacto" class="contact section">
+    <div class="container">
+        <h2 class="section__title"><span class="section__title-prefix">//</span>CONTACTO</h2>
+        <div class="contact__container">
+            <div class="contact__info">
+                <!-- TUS DATOS DE CONTACTO - NO LOS CAMBIES -->
+                <div class="contact__item">
+                    <div class="contact__icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg>
                     </div>
-                    <form class="contact__form" id="contact-form">
-                        <div class="form__group"><input type="text" id="name" name="name" class="form__input" placeholder=" " required><label for="name" class="form__label">Nombre</label></div>
-                        <div class="form__group"><input type="email" id="email" name="email" class="form__input" placeholder=" " required><label for="email" class="form__label">Email</label></div>
-                        <div class="form__group"><input type="text" id="subject" name="subject" class="form__input" placeholder=" " required><label for="subject" class="form__label">Asunto</label></div>
-                        <div class="form__group"><textarea id="message" name="message" class="form__textarea" placeholder=" " rows="4" required></textarea><label for="message" class="form__label">Mensaje</label></div>
-                        <button type="submit" class="btn btn--primary btn--full"><span>ENVIAR MENSAJE</span><svg class="btn__icon" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
-                    </form>
+                    <div class="contact__text">
+                        <h4>Email</h4>
+                        <a href="mailto:yarolbellocoquil@gmail.com">yarolbellocoquil@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact__item">
+                    <div class="contact__icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                        </svg>
+                    </div>
+                    <div class="contact__text">
+                        <h4>Teléfono</h4>
+                        <a href="tel:+51939935857">+51 939 935 857</a>
+                    </div>
+                </div>
+                <div class="contact__item">
+                    <div class="contact__icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                        </svg>
+                    </div>
+                    <div class="contact__text">
+                        <h4>Ubicación</h4>
+                        <p>Huancán, Huancayo, Junín</p>
+                    </div>
                 </div>
             </div>
-        </section>
+
+            <!-- FORMULARIO - REEMPLAZA DESDE AQUÍ -->
+            <form class="contact__form" id="contact-form" 
+                  action="https://formsubmit.co/yarolbellocoquil@gmail.com" 
+                  method="POST">
+                
+                <!-- Campo de redirección - AHORA CON LA URL CORRECTA -->
+                <input type="hidden" name="_next" value="https://yarol-bello.github.io/gracias.html">
+                
+                <!-- Otros campos ocultos -->
+                <input type="hidden" name="_subject" value="Nuevo mensaje desde tu portafolio">
+                <input type="hidden" name="_captcha" value="false">
+                
+                <!-- Tus campos del formulario -->
+                <div class="form__group">
+                    <input type="text" id="name" name="name" class="form__input" placeholder=" " required>
+                    <label for="name" class="form__label">Nombre</label>
+                </div>
+                
+                <div class="form__group">
+                    <input type="email" id="email" name="email" class="form__input" placeholder=" " required>
+                    <label for="email" class="form__label">Email</label>
+                </div>
+                
+                <div class="form__group">
+                    <input type="text" id="subject" name="subject" class="form__input" placeholder=" " required>
+                    <label for="subject" class="form__label">Asunto</label>
+                </div>
+                
+                <div class="form__group">
+                    <textarea id="message" name="message" class="form__textarea" placeholder=" " rows="4" required></textarea>
+                    <label for="message" class="form__label">Mensaje</label>
+                </div>
+                
+                <button type="submit" class="btn btn--primary btn--full">
+                    <span>ENVIAR MENSAJE</span>
+                    <svg class="btn__icon" viewBox="0 0 24 24">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                    </svg>
+                </button>
+            </form>
+            <!-- HASTA AQUÍ EL FORMULARIO -->
+        </div>
+    </div>
+</section>
+
     </main>
 
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer__content">
-                <div class="footer__logo"><img src="assets/icons/logo-white.svg" alt="YB" class="footer__logo-img"></div>
+                <div class="footer__logo">
+                    <img src="assets/icons/logo-white.svg" alt="YB" class="footer__logo-img">
+                </div>
                 <p class="footer__copy">© 2026 Yarol Bello Coquil. Diseñado con <span class="heart">♥</span></p>
-                <div class="footer__links"><a href="#"><i class="fas fa-file-contract"></i> Términos</a><a href="#"><i class="fas fa-lock"></i> Privacidad</a></div>
+                <div class="footer__links">
+                    <a href="#"><i class="fas fa-file-contract"></i> Términos</a>
+                    <a href="#"><i class="fas fa-lock"></i> Privacidad</a>
+                </div>
             </div>
         </div>
     </footer>
@@ -841,10 +688,19 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="js/particles.js"></script>
-    <script src="js/glitch.js"></script>
+
+    <!-- Módulos -->
+    <script src="js/modules/utils.js"></script>
+    <script src="js/modules/cursor.js"></script>
+    <script src="js/modules/theme.js"></script>
+    <script src="js/modules/navigation.js"></script>
+    <script src="js/modules/glitch.js"></script>
+    <script src="js/modules/particles.js"></script>
+    <script src="js/modules/animations.js"></script>
+    <script src="js/modules/formHandler.js"></script>
+    <script src="js/modules/certificaciones.js"></script>
+    <script src="js/modules/slider3d.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/slider3D.js"></script>
-    <script src="js/certificaciones.js"></script>
 </body>
+
 </html>

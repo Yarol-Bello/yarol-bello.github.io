@@ -35,7 +35,6 @@
             overflow-x: hidden;
         }
         
-        /* Partículas de fondo */
         .particles {
             position: absolute;
             top: 0;
@@ -103,7 +102,6 @@
             color: var(--bg-primary);
         }
         
-        /* CORREGIDO: Propiedades de texto gradiente */
         h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
@@ -297,10 +295,7 @@
         }
     </style>
     
-    <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -365,91 +360,35 @@
     </div>
     
     <script>
-        // Base de datos de proyectos
         const projects = {
-            'ventas': {
-                nombre: 'Sistema de Ventas',
-                github: 'https://github.com/tuusuario/sistema-ventas',
-                progreso: 85,
-                descripcion: 'Sistema de registro de ventas para cevichería local'
-            },
-            'inventario': {
-                nombre: 'Sistema de Inventario',
-                github: 'https://github.com/tuusuario/sistema-inventario',
-                progreso: 70,
-                descripcion: 'Gestión de inventario con alertas automáticas'
-            },
-            'web': {
-                nombre: 'Portafolio Web Profesional',
-                github: 'https://github.com/tuusuario/portafolio',
-                progreso: 95,
-                descripcion: 'Portafolio personal con diseño moderno'
-            },
-            'bd': {
-                nombre: 'Base de Datos Biblioteca',
-                github: 'https://github.com/tuusuario/bd-biblioteca',
-                progreso: 90,
-                descripcion: 'Diseño de BD para sistema de biblioteca'
-            },
-            'clima': {
-                nombre: 'App del Clima',
-                github: 'https://github.com/tuusuario/app-clima',
-                progreso: 60,
-                descripcion: 'Aplicación del clima con API OpenWeatherMap'
-            },
-            'api': {
-                nombre: 'API REST con Node.js',
-                github: 'https://github.com/tuusuario/api-rest',
-                progreso: 75,
-                descripcion: 'API RESTful con autenticación JWT'
-            },
-            'mysql': {
-                nombre: 'BD MySQL Avanzada',
-                github: 'https://github.com/tuusuario/mysql-avanzado',
-                progreso: 80,
-                descripcion: 'Base de datos optimizada con índices y procedures'
-            },
-            'dashboard': {
-                nombre: 'Dashboard Administrativo',
-                github: 'https://github.com/tuusuario/dashboard',
-                progreso: 65,
-                descripcion: 'Panel de control con gráficos interactivos'
-            },
-            'tareas': {
-                nombre: 'App de Tareas',
-                github: 'https://github.com/tuusuario/app-tareas',
-                progreso: 70,
-                descripcion: 'Aplicación de gestión de tareas con Java'
-            },
-            'warehouse': {
-                nombre: 'Data Warehouse',
-                github: 'https://github.com/tuusuario/data-warehouse',
-                progreso: 55,
-                descripcion: 'Data Warehouse con procesos ETL'
-            }
+            'ventas': { nombre: 'Sistema de Ventas', github: 'https://github.com/tuusuario/sistema-ventas', progreso: 85 },
+            'inventario': { nombre: 'Sistema de Inventario', github: 'https://github.com/tuusuario/sistema-inventario', progreso: 70 },
+            'web': { nombre: 'Portafolio Web Profesional', github: 'https://github.com/tuusuario/portafolio', progreso: 95 },
+            'bd': { nombre: 'Base de Datos Biblioteca', github: 'https://github.com/tuusuario/bd-biblioteca', progreso: 90 },
+            'clima': { nombre: 'App del Clima', github: 'https://github.com/tuusuario/app-clima', progreso: 60 },
+            'api': { nombre: 'API REST con Node.js', github: 'https://github.com/tuusuario/api-rest', progreso: 75 },
+            'mysql': { nombre: 'BD MySQL Avanzada', github: 'https://github.com/tuusuario/mysql-avanzado', progreso: 80 },
+            'dashboard': { nombre: 'Dashboard Administrativo', github: 'https://github.com/tuusuario/dashboard', progreso: 65 },
+            'tareas': { nombre: 'App de Tareas', github: 'https://github.com/tuusuario/app-tareas', progreso: 70 },
+            'warehouse': { nombre: 'Data Warehouse', github: 'https://github.com/tuusuario/data-warehouse', progreso: 55 }
         };
 
-        // Obtener parámetros de la URL
         const urlParams = new URLSearchParams(window.location.search);
         const projectKey = urlParams.get('project') || 'ventas';
         const githubUrl = urlParams.get('github');
         
-        // Obtener datos del proyecto
         const projectData = projects[projectKey] || projects['ventas'];
         
-        // Actualizar la página con los datos del proyecto
         document.getElementById('projectName').textContent = projectData.nombre;
         document.getElementById('progressPercentage').textContent = projectData.progreso + '%';
         document.getElementById('progressFill').style.width = projectData.progreso + '%';
         
-        // Configurar enlace de GitHub (prioridad al parámetro de URL)
         if (githubUrl) {
             document.getElementById('githubLink').href = githubUrl;
         } else {
             document.getElementById('githubLink').href = projectData.github;
         }
         
-        // Animación adicional para el progreso
         const progressFill = document.getElementById('progressFill');
         progressFill.style.animation = 'fillProgress 1.5s ease-out forwards';
         progressFill.style.width = projectData.progreso + '%';
