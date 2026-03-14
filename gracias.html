@@ -1,68 +1,649 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡Gracias! | Yarol Bello</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>YAROL BELLO | Portafolio Profesional</title>
+
+    <!-- Meta tags optimizados -->
+    <meta name="description" content="Portafolio profesional de Yarol Bello - Estudiante de Ingeniería de Sistemas especializado en desarrollo de software, bases de datos e IA. 5to ciclo.">
+    <meta name="keywords" content="Yarol Bello, desarrollador junior, sistemas informáticos, bases de datos, Java, SQL, inteligencia artificial, portafolio programador, Huancayo, Perú">
+    <meta name="author" content="Yarol Bello Coquil">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:title" content="Yarol Bello | Portafolio Profesional">
+    <meta property="og:description" content="Estudiante de Ingeniería de Sistemas - 5to ciclo. Especializado en desarrollo de software y bases de datos.">
+    <meta property="og:image" content="assets/images/og-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://yarol-bello.github.io">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Yarol Bello | Portafolio">
+    <meta name="twitter:description" content="Descubre mis proyectos en desarrollo de software e IA">
+
+    <!-- Fuentes optimizadas con preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Iconos (carga diferida) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    </noscript>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: var(--font-body);
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .gracias-container {
-            text-align: center;
-            padding: 3rem 2rem;
-            background: var(--bg-secondary);
-            border-radius: 30px;
-            border: 1px solid var(--accent);
-            max-width: 500px;
-            margin: 2rem;
-            box-shadow: 0 0 50px rgba(var(--accent-rgb), 0.1);
-        }
-        h1 {
-            font-size: 2.5rem;
-            font-family: var(--font-display);
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--text-primary), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        p {
-            color: var(--text-secondary);
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-        .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: var(--accent);
-            color: var(--bg-primary);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px var(--accent);
-        }
-    </style>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/logo-dark.svg">
+    <link rel="alternate icon" href="assets/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 </head>
+
 <body>
-    <div class="gracias-container">
-        <h1>¡Mensaje Enviado!</h1>
-        <p>Gracias por contactarme. Tu mensaje ha sido recibido y te responderé a la brevedad posible.</p>
-        <a href="index.html" class="btn">Volver al Inicio</a>
+    <!-- Partículas de fondo -->
+    <div id="particles-js"></div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+        <span class="scroll-indicator__text">DESCUBRE MÁS</span>
+        <div class="scroll-indicator__line"></div>
+        <a href="#inicio" class="scroll-arrow" aria-label="Scroll to top">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
+            </svg>
+        </a>
     </div>
+
+    <!-- Cursor personalizado -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header__container">
+            <a href="#" class="logo" aria-label="Yarol Bello - Inicio">
+                <img src="assets/icons/logo-dark.svg" alt="Yarol Bello" class="logo__img logo__img--dark" width="55" height="55">
+                <img src="assets/icons/logo-white.svg" alt="Yarol Bello" class="logo__img logo__img--light" width="55" height="55">
+                <span class="logo__text">YAROL BELLO</span>
+            </a>
+
+            <nav class="nav" aria-label="Navegación principal">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#inicio" class="nav__link active" data-text="INICIO">INICIO</a></li>
+                    <li class="nav__item"><a href="#perfil" class="nav__link" data-text="PERFIL">PERFIL</a></li>
+                    <li class="nav__item"><a href="#proyectos" class="nav__link" data-text="PROYECTOS">PROYECTOS</a></li>
+                    <li class="nav__item"><a href="#habilidades" class="nav__link" data-text="HABILIDADES">HABILIDADES</a></li>
+                    <li class="nav__item"><a href="#certificaciones" class="nav__link" data-text="CERTIFICACIONES">CERTIFICACIONES</a></li>
+                    <li class="nav__item"><a href="#idiomas" class="nav__link" data-text="IDIOMAS">IDIOMAS</a></li>
+                    <li class="nav__item"><a href="#contacto" class="nav__link" data-text="CONTACTO">CONTACTO</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <!-- THEME TOGGLE MEJORADO - Con sol y luna animados -->
+                <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" aria-pressed="false">
+                    <!-- Versión SOL con partículas -->
+                    <div class="sun-container">
+                        <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="12" cy="12" r="5" fill="currentColor"/>
+                            <g class="sun-rays">
+                                <line x1="12" y1="2" x2="12" y2="4" stroke="currentColor" stroke-width="2"/>
+                                <line x1="12" y1="20" x2="12" y2="22" stroke="currentColor" stroke-width="2"/>
+                                <line x1="2" y1="12" x2="4" y2="12" stroke="currentColor" stroke-width="2"/>
+                                <line x1="20" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2"/>
+                                <line x1="4.93" y1="4.93" x2="6.34" y2="6.34" stroke="currentColor" stroke-width="2"/>
+                                <line x1="17.66" y1="17.66" x2="19.07" y2="19.07" stroke="currentColor" stroke-width="2"/>
+                                <line x1="4.93" y1="19.07" x2="6.34" y2="17.66" stroke="currentColor" stroke-width="2"/>
+                                <line x1="17.66" y1="6.34" x2="19.07" y2="4.93" stroke="currentColor" stroke-width="2"/>
+                            </g>
+                        </svg>
+                        <!-- Partículas solares (tormenta) -->
+                        <div class="sun-particles">
+                            <div class="sun-particle"></div>
+                            <div class="sun-particle"></div>
+                            <div class="sun-particle"></div>
+                            <div class="sun-particle"></div>
+                            <div class="sun-particle"></div>
+                        </div>
+                        <div class="sun-glint glint-1"></div>
+                        <div class="sun-glint glint-2"></div>
+                    </div>
+                    
+                    <!-- Versión LUNA con cráteres -->
+                    <div class="moon-container">
+                        <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" fill="currentColor"/>
+                            <!-- Ojos y boca -->
+                            <circle class="moon-eye moon-eye-left" cx="9" cy="10" r="1.2" fill="var(--bg-primary)"/>
+                            <circle class="moon-eye moon-eye-right" cx="15" cy="10" r="1.2" fill="var(--bg-primary)"/>
+                            <path class="moon-mouth" d="M9 16 Q12 19, 15 16" stroke="var(--bg-primary)" stroke-width="1.5" fill="none"/>
+                            <!-- Estrellas -->
+                            <g class="moon-stars">
+                                <circle cx="4" cy="5" r="0.8" fill="currentColor" opacity="0"/>
+                                <circle cx="20" cy="8" r="0.8" fill="currentColor" opacity="0"/>
+                                <circle cx="6" cy="20" r="0.8" fill="currentColor" opacity="0"/>
+                                <circle cx="18" cy="18" r="0.8" fill="currentColor" opacity="0"/>
+                            </g>
+                        </svg>
+                        <!-- CRÁTERES DE LA LUNA -->
+                        <div class="moon-crater"></div>
+                        <div class="moon-crater"></div>
+                        <div class="moon-crater"></div>
+                        <div class="moon-crater"></div>
+                        <div class="moon-crater"></div>
+                        <!-- Mordisco -->
+                        <div class="moon-bite"></div>
+                    </div>
+                </button>
+                
+                <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- QUICK NAV - Navegación Lateral -->
+    <div class="quick-nav quick-nav--lateral" role="complementary" aria-label="Navegación rápida">
+        <a href="#inicio" class="quick-nav__item active" data-tooltip="Inicio">
+            <i class="fas fa-home quick-nav__icon" aria-hidden="true"></i>
+            <span class="quick-nav__text">Inicio</span>
+        </a>
+        <a href="#perfil" class="quick-nav__item" data-tooltip="Perfil">
+            <i class="fas fa-user quick-nav__icon" aria-hidden="true"></i>
+            <span class="quick-nav__text">Perfil</span>
+        </a>
+        <a href="#proyectos" class="quick-nav__item" data-tooltip="Proyectos">
+            <i class="fas fa-code quick-nav__icon" aria-hidden="true"></i>
+            <span class="quick-nav__text">Proyectos</span>
+        </a>
+        <a href="#habilidades" class="quick-nav__item" data-tooltip="Habilidades">
+            <i class="fas fa-chart-bar quick-nav__icon" aria-hidden="true"></i>
+            <span class="quick-nav__text">Habilidades</span>
+        </a>
+        <a href="#certificaciones" class="quick-nav__item" data-tooltip="Certificaciones">
+            <i class="fas fa-certificate quick-nav__icon" aria-hidden="true"></i>
+            <span class="quick-nav__text">Certificaciones</span>
+        </a>
+        <a href="#idiomas" class="quick-nav__item" data-tooltip="Idiomas">
+            <i class="fas fa-language quick-nav__icon" aria-hidden="true"></i>
+            <span class="quick-nav__text">Idiomas</span>
+        </a>
+        <a href="#contacto" class="quick-nav__item" data-tooltip="Contacto">
+            <i class="fas fa-envelope quick-nav__icon" aria-hidden="true"></i>
+            <span class="quick-nav__text">Contacto</span>
+        </a>
+    </div>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="inicio" class="hero">
+            <div class="hero__container">
+                <div class="hero__content animate-on-load">
+                    <span class="hero__greeting">// HOLA, SOY</span>
+                    <h1 class="hero__title glitch" data-text="YAROL BELLO COQUIL">YAROL BELLO COQUIL</h1>
+                    <div class="hero__subtitle-container">
+                        <span class="hero__subtitle">Estudiante de </span>
+                        <div class="typed-text"><span class="typed"></span></div>
+                    </div>
+                    <p class="hero__description">
+                        Apasionado por crear soluciones tecnológicas que resuelvan problemas reales.
+                        Especializado en <span class="highlight">desarrollo de software</span> y
+                        <span class="highlight">bases de datos</span>.
+                    </p>
+                    <div class="hero__buttons">
+                        <a href="#proyectos" class="btn btn--primary">
+                            <span>EXPLORAR PROYECTOS</span>
+                            <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z" />
+                            </svg>
+                        </a>
+                        <a href="assets/docs/CV-Yarol-Bello.pdf" download class="btn btn--outline">
+                            <span>DESCARGAR CV</span>
+                            <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M16.59 9H15V4c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v5H7.41c-.89 0-1.34 1.08-.71 1.71l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.63-.63.19-1.71-.7-1.71zM5 19c0 .55.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1H6c-.55 0-1 .45-1 1z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="hero__social">
+                        <a href="https://github.com/Yarol-Bello" target="_blank" rel="noopener noreferrer" class="social-link" data-tooltip="GitHub" aria-label="GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/yarol-bello-coquil-6a5324254/" target="_blank" rel="noopener noreferrer" class="social-link" data-tooltip="LinkedIn" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://x.com/DossAg_5" target="_blank" rel="noopener noreferrer" class="social-link" data-tooltip="Twitter" aria-label="Twitter">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.instagram.com/yarol_bello/" target="_blank" rel="noopener noreferrer" class="social-link" data-tooltip="Instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="mailto:yarolbellocoquil@gmail.com" class="social-link" data-tooltip="Email" aria-label="Enviar email">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero__image animate-on-load delay-1">
+                    <div class="image-wrapper">
+                        <img src="assets/images/profile.webp" alt="Yarol Bello - Desarrollador de software" class="hero__img" width="380" height="380" loading="eager">
+                        <div class="image-border"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PERFIL PROFESIONAL -->
+        <section id="perfil" class="profile section">
+            <div class="container">
+                <h2 class="section__title"><span class="section__title-prefix">//</span>PERFIL PROFESIONAL</h2>
+                <div class="profile__grid-minimal">
+                    <!-- Datos Personales -->
+                    <div class="profile-card-minimal">
+                        <div class="minimal-header">
+                            <div class="minimal-icon"><i class="fas fa-user-circle" aria-hidden="true"></i></div>
+                            <h3>Datos Personales</h3>
+                        </div>
+                        <div class="minimal-content">
+                            <div class="info-row"><span class="info-label">Ubicación</span><span class="info-value">Huancayo, Perú</span></div>
+                            <div class="info-row"><span class="info-label">Teléfono</span><span class="info-value">939 935 857</span></div>
+                            <div class="info-row"><span class="info-label">Email</span><span class="info-value">yarolbellocoquil@gmail.com</span></div>
+                            <div class="info-row"><span class="info-label">Ciclo</span><span class="info-value">5to</span></div>
+                            <div class="info-row"><span class="info-label">Disponibilidad</span><span class="info-value">Prácticas</span></div>
+                        </div>
+                    </div>
+                    <!-- Formación -->
+                    <div class="profile-card-minimal">
+                        <div class="minimal-header">
+                            <div class="minimal-icon"><i class="fas fa-graduation-cap" aria-hidden="true"></i></div>
+                            <h3>Formación</h3>
+                        </div>
+                        <div class="minimal-content">
+                            <div class="timeline-minimal">
+                                <div class="timeline-item-minimal">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-text">
+                                        <h4>Ingeniería de Sistemas</h4>
+                                        <p>UTP · 2024 - Actualidad</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item-minimal">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-text">
+                                        <h4>Ing. Software con IA</h4>
+                                        <p>SENATI · 2021-2023 · Egresado</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item-minimal">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-text">
+                                        <h4>Beca Continuidad</h4>
+                                        <p>PRONABEC</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Logros -->
+                    <div class="profile-card-minimal">
+                        <div class="minimal-header">
+                            <div class="minimal-icon"><i class="fas fa-trophy" aria-hidden="true"></i></div>
+                            <h3>Logros</h3>
+                        </div>
+                        <div class="minimal-content">
+                            <div class="badges-minimal">
+                                <div class="badge-minimal"><i class="fas fa-database" aria-hidden="true"></i><span>Database Design</span></div>
+                                <div class="badge-minimal"><i class="fab fa-java" aria-hidden="true"></i><span>Java Fundamentals</span></div>
+                                <div class="badge-minimal"><i class="fas fa-store" aria-hidden="true"></i><span>Sistema de Ventas</span></div>
+                                <div class="badge-minimal"><i class="fas fa-project-diagram" aria-hidden="true"></i><span>Diseño BD</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROYECTOS CON SLIDER 3D -->
+        <section id="proyectos" class="projects section">
+            <div class="container">
+                <h2 class="section__title"><span class="section__title-prefix">//</span>PROYECTOS DESTACADOS</h2>
+
+                <!-- FILTROS -->
+                <div class="projects__filters" id="projectFilters">
+                    <button class="filter-btn active" data-filter="all">TODOS</button>
+                    <button class="filter-btn" data-filter="software">SOFTWARE</button>
+                    <button class="filter-btn" data-filter="database">BD</button>
+                    <button class="filter-btn" data-filter="web">WEB</button>
+                </div>
+
+                <!-- SLIDER 3D -->
+                <div class="slider-3d-container">
+                    <div class="slider-3d" id="slider3d"></div>
+                    <button class="slider-3d__control slider-3d__control--prev" id="sliderPrev" aria-label="Proyecto anterior">
+                        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                    </button>
+                    <button class="slider-3d__control slider-3d__control--next" id="sliderNext" aria-label="Proyecto siguiente">
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <!-- Indicadores de posición -->
+                <div class="slider-3d__dots" id="sliderDots" role="tablist"></div>
+            </div>
+        </section>
+
+        <!-- HABILIDADES TÉCNICAS -->
+        <section id="habilidades" class="skills section">
+            <div class="container">
+                <h2 class="section__title"><span class="section__title-prefix">//</span>HABILIDADES TÉCNICAS</h2>
+                <div class="skills__container">
+                    <!-- Lenguajes -->
+                    <div class="skills__category">
+                        <h3 class="skills__category-title"><span class="category-icon" aria-hidden="true">⌨️</span>LENGUAJES</h3>
+                        <div class="skills__grid">
+                            <div class="skill-item">
+                                <div class="skill-item__header"><span class="skill-item__name">Java</span><span class="skill-item__level">Básico</span></div>
+                                <div class="skill-item__bar"><div class="skill-item__progress" style="width: 60%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__header"><span class="skill-item__name">SQL</span><span class="skill-item__level">Intermedio</span></div>
+                                <div class="skill-item__bar"><div class="skill-item__progress" style="width: 75%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__header"><span class="skill-item__name">HTML5/CSS3</span><span class="skill-item__level">Básico</span></div>
+                                <div class="skill-item__bar"><div class="skill-item__progress" style="width: 65%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__header"><span class="skill-item__name">Python</span><span class="skill-item__level">Básico</span></div>
+                                <div class="skill-item__bar"><div class="skill-item__progress" style="width: 50%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Bases de Datos -->
+                    <div class="skills__category">
+                        <h3 class="skills__category-title"><span class="category-icon" aria-hidden="true">🗄️</span>BASES DE DATOS</h3>
+                        <div class="skills__grid">
+                            <div class="skill-item">
+                                <div class="skill-item__header"><span class="skill-item__name">MySQL</span><span class="skill-item__level">Intermedio</span></div>
+                                <div class="skill-item__bar"><div class="skill-item__progress" style="width: 80%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__header"><span class="skill-item__name">SQLite</span><span class="skill-item__level">Básico</span></div>
+                                <div class="skill-item__bar"><div class="skill-item__progress" style="width: 60%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__header"><span class="skill-item__name">Diseño BD</span><span class="skill-item__level">Avanzado</span></div>
+                                <div class="skill-item__bar"><div class="skill-item__progress" style="width: 85%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__header"><span class="skill-item__name">Normalización</span><span class="skill-item__level">Avanzado</span></div>
+                                <div class="skill-item__bar"><div class="skill-item__progress" style="width: 90%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Herramientas -->
+                    <div class="skills__category">
+                        <h3 class="skills__category-title"><span class="category-icon" aria-hidden="true">🛠️</span>HERRAMIENTAS</h3>
+                        <div class="skills__grid">
+                            <div class="skill-item">
+                                <div class="skill-item__header"><span class="skill-item__name">Git/GitHub</span><span class="skill-item__level">Básico</span></div>
+                                <div class="skill-item__bar"><div class="skill-item__progress" style="width: 55%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__header"><span class="skill-item__name">VS Code</span><span class="skill-item__level">Intermedio</span></div>
+                                <div class="skill-item__bar"><div class="skill-item__progress" style="width: 70%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__header"><span class="skill-item__name">MySQL Workbench</span><span class="skill-item__level">Intermedio</span></div>
+                                <div class="skill-item__bar"><div class="skill-item__progress" style="width: 75%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__header"><span class="skill-item__name">Office 365</span><span class="skill-item__level">Avanzado</span></div>
+                                <div class="skill-item__bar"><div class="skill-item__progress" style="width: 90%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Habilidades Blandas -->
+                    <div class="skills__category">
+                        <h3 class="skills__category-title"><span class="category-icon" aria-hidden="true">🤝</span>BLANDAS</h3>
+                        <div class="skills__soft">
+                            <span class="soft-skill">Trabajo en equipo</span>
+                            <span class="soft-skill">Responsabilidad</span>
+                            <span class="soft-skill">Aprendizaje rápido</span>
+                            <span class="soft-skill">Adaptabilidad</span>
+                            <span class="soft-skill">Comunicación</span>
+                            <span class="soft-skill">Resolución de problemas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICACIONES -->
+        <section id="certificaciones" class="certifications section">
+            <div class="container">
+                <h2 class="section__title"><span class="section__title-prefix">//</span>CERTIFICACIONES</h2>
+
+                <div class="certs-scroll" id="certsScroll">
+                    <div class="certs-track">
+                        <div class="cert-scroll-card">
+                            <div class="cert-number">01</div>
+                            <div class="cert-icon"><i class="devicon-oracle-original colored" aria-hidden="true"></i></div>
+                            <h3>Database Design</h3>
+                            <p>Oracle Academy · 2024</p>
+                            <div class="cert-skills"><span>Modelado E-R</span><span>Normalización</span><span>SQL</span></div>
+                        </div>
+                        <div class="cert-scroll-card">
+                            <div class="cert-number">02</div>
+                            <div class="cert-icon"><i class="devicon-java-plain colored" aria-hidden="true"></i></div>
+                            <h3>Java Fundamentals</h3>
+                            <p>Oracle Academy · 2023</p>
+                            <div class="cert-skills"><span>POO</span><span>Java SE</span><span>Algoritmos</span></div>
+                        </div>
+                        <div class="cert-scroll-card">
+                            <div class="cert-number">03</div>
+                            <div class="cert-icon"><i class="fas fa-graduation-cap" aria-hidden="true"></i></div>
+                            <h3>Ing. Software con IA</h3>
+                            <p>SENATI · 2021-2023</p>
+                            <div class="cert-skills"><span>Fundamentos IA</span><span>Desarrollo SW</span><span>Metodologías ágiles</span></div>
+                        </div>
+                        <div class="cert-scroll-card">
+                            <div class="cert-number">04</div>
+                            <div class="cert-icon"><i class="fas fa-cloud" aria-hidden="true"></i></div>
+                            <h3>AWS Cloud Practitioner</h3>
+                            <p>Próximamente</p>
+                            <div class="cert-skills"><span>En curso</span></div>
+                        </div>
+                        <div class="cert-scroll-card">
+                            <div class="cert-number">05</div>
+                            <div class="cert-icon"><i class="fab fa-python" aria-hidden="true"></i></div>
+                            <h3>Python for Data Science</h3>
+                            <p>Próximamente</p>
+                            <div class="cert-skills"><span>En curso</span></div>
+                        </div>
+                        <div class="cert-scroll-card">
+                            <div class="cert-number">06</div>
+                            <div class="cert-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+                            <h3>Power BI Analyst</h3>
+                            <p>Próximamente</p>
+                            <div class="cert-skills"><span>En curso</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scroll-hint">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                    <span>Desliza para ver más certificaciones</span>
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- IDIOMAS -->
+        <section id="idiomas" class="languages section">
+            <div class="container">
+                <h2 class="section__title"><span class="section__title-prefix">//</span>IDIOMAS</h2>
+                <div class="languages__grid-compact">
+                    <div class="language-card-compact">
+                        <div class="compact-header">
+                            <div class="compact-flag"><span class="fi fi-es" aria-label="Español"></span></div>
+                            <div class="compact-title">
+                                <h3>Español</h3>
+                                <span class="compact-level native"><span class="level-badge">C2</span> Nativo</span>
+                            </div>
+                        </div>
+                        <div class="compact-indicator"><i class="fas fa-crown" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="language-card-compact">
+                        <div class="compact-header">
+                            <div class="compact-flag"><span class="fi fi-gb" aria-label="Inglés"></span></div>
+                            <div class="compact-title">
+                                <h3>Inglés</h3>
+                                <span class="compact-level"><span class="level-badge">A2</span> Elemental</span>
+                            </div>
+                        </div>
+                        <div class="compact-indicator"><i class="fas fa-seedling" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="language-card-compact">
+                        <div class="compact-header">
+                            <div class="compact-flag"><span class="fi fi-pe" aria-label="Quechua"></span></div>
+                            <div class="compact-title">
+                                <h3>Quechua</h3>
+                                <span class="compact-level"><span class="level-badge">A1</span> Básico</span>
+                            </div>
+                        </div>
+                        <div class="compact-indicator"><i class="fas fa-leaf" aria-hidden="true"></i></div>
+                    </div>
+                </div>
+                <div class="mcer-legend">
+                    <span><span class="legend-badge">A1/A2</span> Básico</span>
+                    <span><span class="legend-badge">B1/B2</span> Intermedio</span>
+                    <span><span class="legend-badge">C1/C2</span> Avanzado/Nativo</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="contact section">
+            <div class="container">
+                <h2 class="section__title"><span class="section__title-prefix">//</span>CONTACTO</h2>
+                <div class="contact__container">
+                    <div class="contact__info">
+                        <div class="contact__item">
+                            <div class="contact__icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                            </div>
+                            <div class="contact__text">
+                                <h4>Email</h4>
+                                <a href="mailto:yarolbellocoquil@gmail.com">yarolbellocoquil@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact__item">
+                            <div class="contact__icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            </div>
+                            <div class="contact__text">
+                                <h4>Teléfono</h4>
+                                <a href="tel:+51939935857">+51 939 935 857</a>
+                            </div>
+                        </div>
+                        <div class="contact__item">
+                            <div class="contact__icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            </div>
+                            <div class="contact__text">
+                                <h4>Ubicación</h4>
+                                <p>Huancán, Huancayo, Junín</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact__form" id="contact-form" 
+                          action="https://formsubmit.co/yarolbellocoquil@gmail.com" 
+                          method="POST">
+                        <input type="hidden" name="_next" value="https://yarol-bello.github.io/gracias.html">
+                        <input type="hidden" name="_subject" value="Nuevo mensaje desde tu portafolio">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="box">
+                        
+                        <div class="form__group">
+                            <input type="text" id="name" name="name" class="form__input" placeholder=" " required>
+                            <label for="name" class="form__label">Nombre</label>
+                        </div>
+                        
+                        <div class="form__group">
+                            <input type="email" id="email" name="email" class="form__input" placeholder=" " required>
+                            <label for="email" class="form__label">Email</label>
+                        </div>
+                        
+                        <div class="form__group">
+                            <input type="text" id="subject" name="subject" class="form__input" placeholder=" " required>
+                            <label for="subject" class="form__label">Asunto</label>
+                        </div>
+                        
+                        <div class="form__group">
+                            <textarea id="message" name="message" class="form__textarea" placeholder=" " rows="4" required></textarea>
+                            <label for="message" class="form__label">Mensaje</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary btn--full">
+                            <span>ENVIAR MENSAJE</span>
+                            <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__logo">
+                    <img src="assets/icons/logo-white.svg" alt="Yarol Bello" class="footer__logo-img" width="70" height="70" loading="lazy">
+                </div>
+                <p class="footer__copy">© 2026 Yarol Bello Coquil. Diseñado con <span class="heart" aria-hidden="true">♥</span></p>
+                <div class="footer__links">
+                    <a href="#" aria-label="Términos y condiciones"><i class="fas fa-file-contract" aria-hidden="true"></i> Términos</a>
+                    <a href="#" aria-label="Política de privacidad"><i class="fas fa-lock" aria-hidden="true"></i> Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+
+    <!-- Módulos -->
+    <script src="js/modules/utils.js" defer></script>
+    <script src="js/modules/cursor.js" defer></script>
+    <script src="js/modules/theme.js" defer></script>
+    <script src="js/modules/navigation.js" defer></script>
+    <script src="js/modules/glitch.js" defer></script>
+    <script src="js/modules/particles.js" defer></script>
+    <script src="js/modules/animations.js" defer></script>
+    <script src="js/modules/formHandler.js" defer></script>
+    <script src="js/modules/certificaciones.js" defer></script>
+    <script src="js/modules/slider3d.js" defer></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>

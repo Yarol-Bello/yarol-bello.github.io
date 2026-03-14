@@ -33,8 +33,11 @@
     /* Colores específicos para sol y luna */
     --sun-color: #FFD700;
     --sun-ray-color: #FFA500;
+    --sun-glow: #FF4500;
     --moon-color: #4A5568;
+    --moon-highlight: #718096;
     --star-color: #FFD700;
+    --crater-color: #2D3748;
 }
 
 /* ===== MODO CLARO ===== */
@@ -243,7 +246,7 @@ body {
     color: transparent;
 }
 
-/* ===== THEME TOGGLE MEJORADO ===== */
+/* ===== THEME TOGGLE MEJORADO - CON EFECTOS PERMANENTES ===== */
 .theme-toggle {
     position: relative;
     width: 45px;
@@ -267,7 +270,7 @@ body {
     background: transparent !important;
 }
 
-/* Contenedores para sol y luna */
+/* Contenedores para sol y luna - VERSIÓN CORREGIDA (SIN DUPLICADOS) */
 .sun-container, .moon-container {
     position: absolute;
     width: 100%;
@@ -275,26 +278,63 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: opacity 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+                visibility 0.5s ease,
+                transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     background: transparent;
 }
 
-.sun-container { transform: scale(1); }
-.moon-container { transform: scale(0); }
+/* Por defecto (modo oscuro): solo sol visible */
+.sun-container { 
+    opacity: 1; 
+    visibility: visible;
+    transform: scale(1);
+    pointer-events: auto;
+}
+.moon-container { 
+    opacity: 0; 
+    visibility: hidden;
+    transform: scale(0);
+    pointer-events: none;
+}
 
-[data-theme="light"] .sun-container { transform: scale(0); }
-[data-theme="light"] .moon-container { transform: scale(1); }
+/* Modo claro: solo luna visible */
+[data-theme="light"] .sun-container { 
+    opacity: 0; 
+    visibility: hidden;
+    transform: scale(0);
+    pointer-events: none;
+}
+[data-theme="light"] .moon-container { 
+    opacity: 1; 
+    visibility: visible;
+    transform: scale(1);
+    pointer-events: auto;
+}
 
-/* ===== SOL CON EFECTO TORMENTA SOLAR ===== */
+/* ===== SOL CON EFECTOS PERMANENTES ===== */
 .sun-container svg {
     filter: drop-shadow(0 0 15px var(--sun-color));
+    animation: sunPulse 3s ease-in-out infinite;
+}
+
+@keyframes sunPulse {
+    0%, 100% { filter: drop-shadow(0 0 15px var(--sun-color)); }
+    50% { filter: drop-shadow(0 0 25px var(--sun-glow)); }
 }
 
 .sun-icon circle {
     fill: var(--sun-color);
     transition: all 0.3s ease;
+    animation: sunCorePulse 4s ease-in-out infinite;
 }
 
+@keyframes sunCorePulse {
+    0%, 100% { r: 5; }
+    50% { r: 5.3; fill: #FFA500; }
+}
+
+/* Rayos del sol */
 .sun-rays line {
     stroke: var(--sun-ray-color);
     stroke-width: 2.5;
@@ -312,15 +352,11 @@ body {
 .sun-rays line:nth-child(7) { transform-origin: 6px 18px; }
 .sun-rays line:nth-child(8) { transform-origin: 18px 6px; }
 
+/* Rayos siempre visibles y girando */
 .sun-rays {
-    opacity: 0;
-    transform-origin: center;
-    transition: all 0.3s ease;
-}
-
-.theme-toggle:hover .sun-rays {
     opacity: 1;
-    animation: solarFlare 8s linear infinite;
+    transform-origin: center;
+    animation: solarFlare 10s linear infinite;
 }
 
 @keyframes solarFlare {
@@ -331,7 +367,30 @@ body {
     100% { transform: rotate(360deg) scale(1); }
 }
 
-/* Partículas solares */
+/* Rayos secundarios (más largos) que aparecen ocasionalmente */
+.sun-rays-secondary {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.sun-rays-secondary line {
+    stroke: var(--sun-glow);
+    stroke-width: 1.5;
+    stroke-dasharray: 2 4;
+    animation: secondaryRays 15s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes secondaryRays {
+    0% { opacity: 0.2; transform: rotate(0deg); }
+    25% { opacity: 0.5; transform: rotate(90deg); }
+    50% { opacity: 0.2; transform: rotate(180deg); }
+    75% { opacity: 0.5; transform: rotate(270deg); }
+    100% { opacity: 0.2; transform: rotate(360deg); }
+}
+
+/* Partículas solares siempre activas */
 .sun-particles {
     position: absolute;
     width: 100%;
@@ -347,7 +406,7 @@ body {
     border-radius: 50%;
     filter: blur(1px);
     animation: solarParticles 3s ease-in-out infinite;
-    opacity: 0;
+    opacity: 1;
 }
 
 .sun-particle:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
@@ -355,6 +414,9 @@ body {
 .sun-particle:nth-child(3) { top: 30%; left: 70%; animation-delay: 1s; }
 .sun-particle:nth-child(4) { top: 80%; left: 30%; animation-delay: 1.5s; }
 .sun-particle:nth-child(5) { top: 50%; left: 50%; animation-delay: 2s; }
+.sun-particle:nth-child(6) { top: 20%; left: 50%; animation-delay: 2.5s; }
+.sun-particle:nth-child(7) { top: 60%; left: 20%; animation-delay: 3s; }
+.sun-particle:nth-child(8) { top: 40%; left: 80%; animation-delay: 3.5s; }
 
 @keyframes solarParticles {
     0% { transform: translate(0, 0) scale(0); opacity: 0; }
@@ -364,7 +426,7 @@ body {
     100% { transform: translate(40px, -40px) scale(0); opacity: 0; }
 }
 
-/* Brillos del sol */
+/* Brillos del sol siempre activos */
 .sun-glint {
     position: absolute;
     width: 10px;
@@ -372,26 +434,34 @@ body {
     background: radial-gradient(circle, #FFFFFF, var(--sun-color));
     border-radius: 50%;
     filter: blur(3px);
-    opacity: 0;
-    animation: sunSparkle 2.5s ease-in-out infinite;
+    opacity: 1;
+    animation: sunSparkle 3s ease-in-out infinite;
     box-shadow: 0 0 20px var(--sun-color);
     pointer-events: none;
     z-index: 2;
 }
 
 .glint-1 { top: 15%; right: 15%; animation-delay: 0s; }
-.glint-2 { bottom: 15%; left: 15%; animation-delay: 1.2s; }
+.glint-2 { bottom: 15%; left: 15%; animation-delay: 1.5s; }
+.glint-3 { top: 30%; left: 30%; animation-delay: 0.8s; }
+.glint-4 { bottom: 30%; right: 30%; animation-delay: 2.2s; }
 
 @keyframes sunSparkle {
-    0%, 100% { opacity: 0; transform: scale(0.5); }
+    0%, 100% { opacity: 0.3; transform: scale(0.8); }
     25% { opacity: 0.8; transform: scale(1.2); background: var(--sun-ray-color); }
     50% { opacity: 1; transform: scale(1.8); background: var(--sun-color); }
     75% { opacity: 0.5; transform: scale(1); background: #FF6B6B; }
 }
 
-/* ===== LUNA CON CRÁTERES ===== */
+/* ===== LUNA CON EFECTOS PERMANENTES ===== */
 .moon-container svg {
     filter: drop-shadow(0 0 12px rgba(74, 85, 104, 0.6));
+    animation: moonGlow 4s ease-in-out infinite;
+}
+
+@keyframes moonGlow {
+    0%, 100% { filter: drop-shadow(0 0 12px rgba(74, 85, 104, 0.6)); }
+    50% { filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.4)); }
 }
 
 .moon-icon path {
@@ -399,7 +469,27 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Cráteres de la luna */
+/* Textura de la luna (efecto de superficie) */
+.moon-texture {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(0,0,0,0.2) 0%, transparent 50%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.5;
+    animation: moonTextureShift 8s ease-in-out infinite;
+}
+
+@keyframes moonTextureShift {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    33% { transform: scale(1.02) rotate(2deg); }
+    66% { transform: scale(0.98) rotate(-2deg); }
+}
+
+/* Cráteres de la luna con profundidad */
 .moon-crater {
     position: absolute;
     background: rgba(45, 55, 72, 0.6);
@@ -410,22 +500,36 @@ body {
     transition: all 0.3s ease;
 }
 
+.moon-crater::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 30%;
+    height: 30%;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+}
+
 .moon-crater:nth-child(1) {
     width: 8px; height: 8px;
     top: 25%; left: 30%;
     background: rgba(26, 32, 44, 0.7);
+    animation: craterGlow 5s ease-in-out infinite;
 }
 
 .moon-crater:nth-child(2) {
     width: 6px; height: 6px;
     top: 60%; left: 65%;
     background: rgba(45, 55, 72, 0.8);
+    animation: craterGlow 5s ease-in-out infinite 1s;
 }
 
 .moon-crater:nth-child(3) {
     width: 4px; height: 4px;
     top: 45%; left: 50%;
     background: rgba(26, 32, 44, 0.9);
+    animation: craterGlow 5s ease-in-out infinite 2s;
 }
 
 .moon-crater:nth-child(4) {
@@ -434,12 +538,33 @@ body {
     background: rgba(26, 32, 44, 0.6);
     border-radius: 40%;
     transform: rotate(15deg);
+    animation: craterGlow 5s ease-in-out infinite 3s;
 }
 
 .moon-crater:nth-child(5) {
     width: 7px; height: 7px;
     top: 15%; left: 70%;
     background: rgba(45, 55, 72, 0.7);
+    animation: craterGlow 5s ease-in-out infinite 4s;
+}
+
+.moon-crater:nth-child(6) {
+    width: 5px; height: 5px;
+    top: 80%; left: 15%;
+    background: rgba(26, 32, 44, 0.8);
+    animation: craterGlow 5s ease-in-out infinite 0.5s;
+}
+
+.moon-crater:nth-child(7) {
+    width: 6px; height: 6px;
+    top: 35%; left: 80%;
+    background: rgba(45, 55, 72, 0.7);
+    animation: craterGlow 5s ease-in-out infinite 2.5s;
+}
+
+@keyframes craterGlow {
+    0%, 100% { box-shadow: inset 2px 2px 4px rgba(0,0,0,0.3), inset -1px -1px 2px rgba(255,255,255,0.2); }
+    50% { box-shadow: inset 2px 2px 6px rgba(255,215,0,0.2), inset -1px -1px 2px rgba(255,255,255,0.3); }
 }
 
 /* Ojos de la luna */
@@ -448,66 +573,100 @@ body {
     transition: all 0.3s ease;
     filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8));
     z-index: 3;
+    animation: cuteBlink 3s infinite;
 }
 
-/* Boca de la luna */
+/* Pupilas para más detalle */
+.moon-pupil {
+    fill: #1A202C;
+    r: 0.5;
+    animation: pupilMove 4s ease-in-out infinite;
+}
+
+@keyframes pupilMove {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(1px, -1px); }
+    50% { transform: translate(2px, 0); }
+    75% { transform: translate(1px, 1px); }
+}
+
+/* Boca de la luna - siempre sonriente */
 .moon-mouth {
     stroke: #FFFFFF;
     stroke-width: 2;
-    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8));
     fill: none;
     z-index: 3;
+    d: path("M8 15 Q12 21, 16 15");
+    stroke: var(--star-color);
+    stroke-width: 2.5;
+    filter: drop-shadow(0 0 8px var(--star-color));
+    animation: mouthSmile 4s ease-in-out infinite;
 }
 
-.theme-toggle:hover .moon-container {
-    animation: floatMoon 3s ease-in-out infinite;
+@keyframes mouthSmile {
+    0%, 100% { d: path("M8 15 Q12 21, 16 15"); }
+    50% { d: path("M8 14 Q12 22, 16 14"); }
+}
+
+/* Animación de flotación para la luna */
+.moon-container {
+    animation: floatMoon 5s ease-in-out infinite;
 }
 
 @keyframes floatMoon {
     0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-5px) scale(1.08); }
+    33% { transform: translateY(-5px) scale(1.05); }
+    66% { transform: translateY(3px) scale(1.02); }
 }
 
 /* Ojos que parpadean */
-.theme-toggle:hover .moon-eye-left,
-.theme-toggle:hover .moon-eye-right {
-    animation: cuteBlink 3s infinite;
-}
-
 @keyframes cuteBlink {
     0%, 45%, 55%, 100% { r: 1.2; opacity: 1; fill: #FFFFFF; }
     48%, 52% { r: 0.3; opacity: 0.5; fill: var(--star-color); }
     50% { r: 0.1; opacity: 0.2; }
 }
 
-/* Boca que sonríe */
-.theme-toggle:hover .moon-mouth {
-    d: path("M8 15 Q12 21, 16 15");
-    stroke-width: 2.5;
-    stroke: var(--star-color);
-    filter: drop-shadow(0 0 8px var(--star-color));
-}
-
-/* Estrellas alrededor */
-.theme-toggle:hover .moon-stars circle {
-    animation: sparkle 2s infinite;
+/* Estrellas alrededor siempre activas */
+.moon-stars circle {
+    animation: sparkle 3s infinite;
     fill: var(--star-color);
     filter: drop-shadow(0 0 6px var(--star-color));
+    opacity: 1;
 }
 
-.moon-stars circle:nth-child(1) { animation-delay: 0s; }
-.moon-stars circle:nth-child(2) { animation-delay: 0.4s; }
-.moon-stars circle:nth-child(3) { animation-delay: 0.8s; }
-.moon-stars circle:nth-child(4) { animation-delay: 1.2s; }
+.moon-stars circle:nth-child(1) { 
+    animation-delay: 0s;
+    cx: 4; cy: 5; r: 0.8;
+}
+.moon-stars circle:nth-child(2) { 
+    animation-delay: 0.4s;
+    cx: 20; cy: 8; r: 0.9;
+}
+.moon-stars circle:nth-child(3) { 
+    animation-delay: 0.8s;
+    cx: 6; cy: 20; r: 0.7;
+}
+.moon-stars circle:nth-child(4) { 
+    animation-delay: 1.2s;
+    cx: 18; cy: 18; r: 1.0;
+}
+.moon-stars circle:nth-child(5) { 
+    animation-delay: 1.6s;
+    cx: 12; cy: 2; r: 0.6;
+}
+.moon-stars circle:nth-child(6) { 
+    animation-delay: 2s;
+    cx: 2; cy: 12; r: 0.8;
+}
 
 @keyframes sparkle {
-    0%, 100% { opacity: 0; transform: scale(0.5); r: 0.8; }
+    0%, 100% { opacity: 0.3; transform: scale(0.8); r: 0.8; }
     25% { opacity: 1; transform: scale(1.3); r: 1.2; fill: #FFA500; }
     50% { opacity: 1; transform: scale(1); r: 1; fill: var(--star-color); }
     75% { opacity: 0.8; transform: scale(1.5); r: 1.5; fill: #FF6B6B; }
 }
 
-/* Mordisco de la luna */
+/* Mordisco de la luna siempre activo */
 .moon-bite {
     position: absolute;
     width: 14px;
@@ -515,25 +674,34 @@ body {
     background: var(--bg-tertiary);
     border-radius: 50%;
     top: 28%; right: 22%;
-    opacity: 0;
-    transition: all 0.3s ease;
+    opacity: 1;
+    animation: nibble 4s ease-in-out infinite;
     box-shadow: inset 0 0 8px rgba(0,0,0,0.2);
     border: 1px solid rgba(255,255,255,0.3);
     pointer-events: none;
     z-index: 3;
 }
 
-.theme-toggle:hover .moon-bite {
-    opacity: 1;
-    animation: nibble 0.8s ease-out infinite;
+.moon-bite::after {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 4px;
+    height: 4px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 50%;
 }
 
 @keyframes nibble {
     0%, 100% { transform: scale(1); background: var(--bg-tertiary); }
-    50% { transform: scale(1.3); background: var(--star-color); box-shadow: 0 0 15px var(--star-color); }
+    20% { transform: scale(1.2); background: var(--star-color); box-shadow: 0 0 15px var(--star-color); }
+    40% { transform: scale(1); background: var(--bg-tertiary); }
+    60% { transform: scale(1.1); background: #FFA500; box-shadow: 0 0 10px #FFA500; }
+    80% { transform: scale(1); background: var(--bg-tertiary); }
 }
 
-/* ===== EFECTO DE ONDAS (TORMENTA SOLAR) ===== */
+/* ===== EFECTO DE ONDAS (TORMENTA SOLAR) PERMANENTE ===== */
 .theme-toggle::before,
 .theme-toggle::after {
     content: '';
@@ -547,28 +715,31 @@ body {
     opacity: 0;
     pointer-events: none;
     z-index: -1;
+    animation: solarStorm 5s infinite;
 }
 
 .theme-toggle::before {
     background: radial-gradient(circle, var(--sun-color) 0%, var(--sun-ray-color) 30%, transparent 70%);
-    animation: solarStorm 4s infinite;
 }
 
 .theme-toggle::after {
     background: radial-gradient(circle, #FF6B6B 0%, #FF4500 30%, transparent 70%);
-    animation: solarStorm 4s infinite 2s;
+    animation-delay: 2.5s;
 }
 
 @keyframes solarStorm {
     0% { transform: translate(-50%, -50%) scale(0); opacity: 0.6; }
-    25% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.4; }
-    50% { transform: translate(-50%, -50%) scale(2); opacity: 0.2; }
-    75% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.1; }
+    20% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.4; }
+    40% { transform: translate(-50%, -50%) scale(1.8); opacity: 0.2; }
+    60% { transform: translate(-50%, -50%) scale(2); opacity: 0.1; }
+    80% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.2; }
     100% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
 }
 
-/* ===== EFECTO AL HACER CLIC ===== */
-.theme-toggle:active { transform: scale(0.9); }
+/* ===== EFECTO AL HACER CLIC (MEJORADO) ===== */
+.theme-toggle:active {
+    transform: scale(0.9);
+}
 
 .theme-toggle.changing {
     animation: themeChange 0.6s ease;
@@ -2655,6 +2826,8 @@ body {
     .moon-crater:nth-child(3) { width: 3px; height: 3px; }
     .moon-crater:nth-child(4) { width: 4px; height: 2px; }
     .moon-crater:nth-child(5) { width: 5px; height: 5px; }
+    .moon-crater:nth-child(6) { width: 4px; height: 4px; }
+    .moon-crater:nth-child(7) { width: 5px; height: 5px; }
 }
 
 /* Landscape en móviles */
